@@ -30,6 +30,7 @@ const navBar = () => {
               aria-label="Search"
             />
           </span>
+          
           <div id="logout-button"></div>
         </div>
         </div>

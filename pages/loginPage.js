@@ -1,5 +1,5 @@
 import loginButton from '../components/loginButton';
-import logo from
+import logo from '../assets/hhpw_logo.png';
 
 const loginPage = () => {
   const domString = `

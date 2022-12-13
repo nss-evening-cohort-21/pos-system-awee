@@ -6,6 +6,7 @@ import viewOrdersPage from '../pages/viewOrdersPage';
 
 const domEvents = () => {
   document.querySelector('#main').addEventListener('click', (e) => {
+    const [, firebasekey] = e.target.id.split('--');
     // VIEW ORDERS PAGE
     if (e.target.id === 'viewOrdersBtn') {
       getAllOrders().then(viewOrdersPage);
@@ -20,11 +21,17 @@ const domEvents = () => {
       getAllRevenue().then(viewRevenuePage);
     }
     // VIEW ORDER DETAILS
-
+    if (e.target.id.includes('orderCardDetails')) {
+      console.warn('DETAILS', firebasekey);
+    }
     // EDIT ORDER
-
+    if (e.target.id.includes('orderCardEdit')) {
+      console.warn('EDIT', firebasekey);
+    }
     // DELETE ORDER
-
+    if (e.target.id.includes('orderCardDelete')) {
+      console.warn('DELETE', firebasekey);
+    }
     // VIEW ADD ITEM PAGE
 
     // GO TO PAYMENT

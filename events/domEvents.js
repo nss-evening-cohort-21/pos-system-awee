@@ -17,8 +17,6 @@ const domEvents = () => {
     }
     // VIEW REVENUE PAGE
     if (e.target.id === 'viewRevenueBtn') {
-      console.warn('VIEW REVENUE');
-      getAllRevenue().then(console.warn);
       getAllRevenue().then(viewRevenuePage);
     }
     // VIEW ORDER DETAILS

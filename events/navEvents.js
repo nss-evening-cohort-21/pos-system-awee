@@ -3,7 +3,9 @@ import homePage from '../pages/homePage';
 const navEvents = (user) => {
   document.querySelector('#navBar').addEventListener('click', (e) => {
     // VIEW ORDERS
-
+    if (e.target.id === 'view-orders') {
+      console.warn('VIEW ORDERS');
+    }
     // VIEW CREATE ORDER PAGE
 
     // VIEW REVENUE PAGE
@@ -13,6 +15,7 @@ const navEvents = (user) => {
       homePage(user);
     }
   });
+  // SEARCH
 };
 
 export default navEvents;

@@ -1,23 +1,27 @@
 const domEvents = () => {
-  // VIEW ORDERS PAGE
+  document.querySelector('#main').addEventListener('click', (e) => {
+    // VIEW ORDERS PAGE
+    if (e.target.id === 'viewOrdersBtn') {
+      console.warn('VIEW ORDERS');
+    }
+    // VIEW CREATE ORDER PAGE
 
-  // VIEW CREATE ORDER PAGE
+    // VIEW REVENUE PAGE
 
-  // VIEW REVENUE PAGE
+    // VIEW ORDER DETAILS
 
-  // VIEW ORDER DETAILS
+    // EDIT ORDER
 
-  // EDIT ORDER
+    // DELETE ORDER
 
-  // DELETE ORDER
+    // VIEW ADD ITEM PAGE
 
-  // VIEW ADD ITEM PAGE
+    // GO TO PAYMENT
 
-  // GO TO PAYMENT
+    // EDIT ITEM
 
-  // EDIT ITEM
-
-  // DELETE ITEM
+    // DELETE ITEM
+  });
 };
 
 export default domEvents;

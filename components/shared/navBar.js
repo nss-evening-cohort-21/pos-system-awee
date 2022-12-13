@@ -1,10 +1,13 @@
 import renderToDOM from '../../utils/renderToDOM';
+import logo from '../../assets/hhpw_logo.png';
 
 const navBar = () => {
   const domString = `
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
     <div class="container-fluid">
-        <a class="navbar-brand title" href="#">Logo</a>
+        <a href="#" id="navbar-hhpw-logo">
+          <img src=${logo} alt="Hip Hop Pizza and Wangs Logo" width="40" height="40"/>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

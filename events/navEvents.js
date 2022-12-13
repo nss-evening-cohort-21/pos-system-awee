@@ -1,11 +1,18 @@
-const navEvents = () => {
-  // VIEW ORDERS
+import homePage from '../pages/homePage';
 
-  // VIEW CREATE ORDER PAGE
+const navEvents = (user) => {
+  document.querySelector('#navBar').addEventListener('click', (e) => {
+    // VIEW ORDERS
 
-  // VIEW REVENUE PAGE
+    // VIEW CREATE ORDER PAGE
 
-  // LOGO/VIEW WELCOME PAGE
+    // VIEW REVENUE PAGE
+
+    // LOGO/VIEW WELCOME PAGE
+    if (e.target.id.includes('navbar-hhpw-logo')) {
+      homePage(user);
+    }
+  });
 };
 
 export default navEvents;

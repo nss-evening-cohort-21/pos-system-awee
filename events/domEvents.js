@@ -1,3 +1,5 @@
+import { getAllRevenue } from '../api/revenueData';
+import viewRevenuePage from '../pages/viewRevenuePage';
 import createOrderForm from '../pages/createOrderPage';
 import { getAllOrders } from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
@@ -14,7 +16,9 @@ const domEvents = () => {
       createOrderForm();
     }
     // VIEW REVENUE PAGE
-
+    if (e.target.id === 'viewRevenueBtn') {
+      getAllRevenue().then(viewRevenuePage);
+    }
     // VIEW ORDER DETAILS
 
     // EDIT ORDER

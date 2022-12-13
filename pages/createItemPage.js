@@ -2,7 +2,7 @@ import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDOM';
 
 const createItemForm = (obj = {}) => {
-  clearDom():
+  clearDom();
   const domString = `
   <div id="create-item-container">
     <form id="${obj.firebaseKey ? `update-item--${obj.firebaseKey}` : 'submit-item'}">

@@ -1,10 +1,12 @@
 import createOrderForm from '../pages/createOrderPage';
+import { getAllOrders } from '../api/orderData';
+import viewOrdersPage from '../pages/viewOrdersPage';
 
 const domEvents = () => {
   document.querySelector('#main').addEventListener('click', (e) => {
     // VIEW ORDERS PAGE
     if (e.target.id === 'viewOrdersBtn') {
-      console.warn('VIEW ORDERS');
+      getAllOrders().then(viewOrdersPage);
     }
     // VIEW CREATE ORDER PAGE
     if (e.target.id === 'createOrderBtn') {

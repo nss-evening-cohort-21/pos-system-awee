@@ -13,7 +13,7 @@ const startApp = (user) => {
   logoutButton();
   domEvents();
   formEvents();
-  navEvents();
+  navEvents(user);
 };
 
 export default startApp;

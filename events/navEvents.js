@@ -1,10 +1,12 @@
+import { getAllOrders } from '../api/orderData';
 import homePage from '../pages/homePage';
+import viewOrdersPage from '../pages/viewOrdersPage';
 
 const navEvents = (user) => {
   document.querySelector('#navBar').addEventListener('click', (e) => {
     // VIEW ORDERS
     if (e.target.id === 'view-orders') {
-      console.warn('VIEW ORDERS');
+      getAllOrders().then(viewOrdersPage);
     }
     // VIEW CREATE ORDER PAGE
 

@@ -5,9 +5,7 @@ const domEvents = () => {
   document.querySelector('#main').addEventListener('click', (e) => {
     // VIEW ORDERS PAGE
     if (e.target.id === 'viewOrdersBtn') {
-      getAllOrders().then((orders) => {
-        viewOrdersPage(orders);
-      });
+      getAllOrders().then(viewOrdersPage);
     }
     // VIEW CREATE ORDER PAGE
 

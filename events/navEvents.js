@@ -1,3 +1,4 @@
+import createOrderForm from '../pages/createOrderPage';
 import { getAllOrders } from '../api/orderData';
 import homePage from '../pages/homePage';
 import { getAllRevenue } from '../api/revenueData';
@@ -11,7 +12,10 @@ const navEvents = (user) => {
       getAllOrders().then(viewOrdersPage);
     }
     // VIEW CREATE ORDER PAGE
-
+    if (e.target.id === 'create-order') {
+      console.warn('CREATE ORDER');
+      createOrderForm(user);
+    }
     // VIEW REVENUE PAGE
     if (e.target.id === 'view-revenue') {
       console.warn('VIEW REVENUE');

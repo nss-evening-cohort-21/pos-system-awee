@@ -1,3 +1,6 @@
+import { getAllRevenue } from '../api/revenueData';
+import viewRevenuePage from '../pages/viewRevenuePage';
+
 const domEvents = () => {
   document.querySelector('#main').addEventListener('click', (e) => {
     // VIEW ORDERS PAGE
@@ -7,7 +10,11 @@ const domEvents = () => {
     // VIEW CREATE ORDER PAGE
 
     // VIEW REVENUE PAGE
-
+    if (e.target.id === 'viewRevenueBtn') {
+      console.warn('VIEW REVENUE');
+      getAllRevenue().then(console.warn);
+      getAllRevenue().then(viewRevenuePage);
+    }
     // VIEW ORDER DETAILS
 
     // EDIT ORDER

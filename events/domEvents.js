@@ -1,3 +1,4 @@
+import createOrderForm from '../pages/createOrderPage';
 import { getAllOrders } from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
 
@@ -8,7 +9,10 @@ const domEvents = () => {
       getAllOrders().then(viewOrdersPage);
     }
     // VIEW CREATE ORDER PAGE
-
+    if (e.target.id === 'createOrderBtn') {
+      console.warn('Create Order');
+      createOrderForm();
+    }
     // VIEW REVENUE PAGE
 
     // VIEW ORDER DETAILS

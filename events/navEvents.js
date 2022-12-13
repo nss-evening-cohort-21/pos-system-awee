@@ -12,6 +12,8 @@ const navEvents = (user) => {
 
     // LOGO/VIEW WELCOME PAGE
     if (e.target.id.includes('navbar-hhpw-logo')) {
+      console.warn('CLICKED LOGO');
+
       homePage(user);
     }
   });

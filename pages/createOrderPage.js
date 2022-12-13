@@ -5,27 +5,23 @@ const createOrderForm = (obj = {}) => {
   clearDom();
   const domString = `
     <form id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}">
-    <div class="form-floating mb-3">
-      <input type="text" class="form-control" id="customerName" placeholder="Full Name">
-      <label for="floatingInput">Order Name</label>
+    <div class="mb-3">
+      <label for="orderName" class="form-label">Order Name</label>
+      <input type="text" class="form-control" id="orderName">
     </div>
-    <div class="form-floating">
+    <div class="form-floating mb-3">
       <input type="tel" class="form-control" id="phoneNumber" placeholder="phone">
       <label for="floatingInput">Customer Phone</label>
     </div>
-    <div class="form-floating">
+    <div class="form-floating mb-3">
       <input type="email" class="form-control" id="phoneNumber" placeholder="email address">
       <label for="floatingInput">Customer Email</label>
     </div>
-    <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Order Type
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">In-Person</a></li>
-      <li><a class="dropdown-item" href="#">Phone</a></li>
-    </ul>
-  </div>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Order Type</option>
+      <option value="1">In-Person</option>
+      <option value="2">Phone</option>
+    </select>
 </form>`;
   renderToDOM('#formContainer', domString);
 };

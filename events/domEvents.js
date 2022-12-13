@@ -1,7 +1,13 @@
+import createOrderForm from '../pages/createOrderPage';
+
 const domEvents = () => {
   // VIEW ORDERS PAGE
 
   // VIEW CREATE ORDER PAGE
+  document.querySelector('#createOrderBtn').addEventListener('click', () => {
+    console.warn('create order?');
+    createOrderForm();
+  });
 
   // VIEW REVENUE PAGE
 

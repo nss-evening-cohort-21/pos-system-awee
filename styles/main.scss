@@ -7,3 +7,21 @@ body {
   color: brown;
   text-align: center;
 }
+
+#orderCardsDiv {
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+
+  .card {
+    width: 300px;
+    margin: 15px;
+  }
+
+  .card-text {
+    font-size: 18px;
+  }
+}

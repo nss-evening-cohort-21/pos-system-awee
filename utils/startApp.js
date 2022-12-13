@@ -5,7 +5,6 @@ import logoutButton from '../components/logoutButton';
 import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
 import navEvents from '../events/navEvents';
-// import viewRevenuePage from '../pages/viewRevenuePage';
 
 const startApp = (user) => {
   domBuilder();
@@ -14,8 +13,7 @@ const startApp = (user) => {
   logoutButton();
   domEvents();
   formEvents();
-  navEvents();
-  // viewRevenuePage();
+  navEvents(user);
 };
 
 export default startApp;

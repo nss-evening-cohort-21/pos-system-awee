@@ -1,13 +1,17 @@
 const formEvents = () => {
-  // ADD ORDER
+  document.querySelector('#formContainer').addEventListener('submit', () => {
+    // NEED TO ADD "e" INSIDE THE PARENTHESIS
 
-  // UPDATE ORDER
+    // ADD ORDER
 
-  // ADD ITEM
+    // UPDATE ORDER
 
-  // UPDATE ITEM
+    // ADD ITEM
 
-  // CLOSE ORDER
+    // UPDATE ITEM
+
+    // CLOSE ORDER
+  });
 };
 
 export default formEvents;

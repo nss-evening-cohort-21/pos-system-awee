@@ -13,8 +13,7 @@ const navEvents = (user) => {
     }
     // VIEW CREATE ORDER PAGE
     if (e.target.id === 'create-order') {
-      console.warn('CREATE ORDER');
-      createOrderForm(user);
+      createOrderForm();
     }
     // VIEW REVENUE PAGE
     if (e.target.id === 'view-revenue') {
@@ -22,8 +21,6 @@ const navEvents = (user) => {
     }
     // LOGO/VIEW WELCOME PAGE
     if (e.target.id.includes('navbar-hhpw-logo')) {
-      console.warn('CLICKED LOGO');
-
       homePage(user);
     }
   });

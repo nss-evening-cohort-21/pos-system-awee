@@ -3,10 +3,10 @@ import navBar from '../components/shared/navBar';
 import homePage from '../pages/homePage';
 import logoutButton from '../components/logoutButton';
 
-const startApp = () => {
+const startApp = (user) => {
   domBuilder();
   navBar();
-  homePage();
+  homePage(user);
   logoutButton();
 };
 

@@ -5,23 +5,24 @@ const createOrderForm = (obj = {}) => {
   clearDom();
   const domString = `
     <form id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}">
-    <div class="mb-3">
+    <div class="mb-3 form-group col-sm-8" style="text-align:left">
       <label for="orderName" class="form-label">Order Name</label>
-      <input type="text" class="form-control" id="orderName">
+      <input type="text" class="form-control" id="orderName" value="${obj.name || ''}">
     </div>
-    <div class="form-floating mb-3">
-      <input type="tel" class="form-control" id="phoneNumber" placeholder="phone">
-      <label for="floatingInput">Customer Phone</label>
+    <div class="mb-3 form-group col-sm-8" style="text-align:left">
+      <label for="customerPhone" class="form-label">Customer Phone</label>
+      <input type="tel" class="form-control" id="phone" value="${obj.phone || ''}">
     </div>
-    <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="phoneNumber" placeholder="email address">
-      <label for="floatingInput">Customer Email</label>
+    <div class="mb-3 form-group col-sm-8" style="text-align:left">
+      <label for="customerEmail" class="form-label">Customer Email</label>
+      <input type="email" class="form-control" id="customerEmail" value="${obj.email || ''}">
     </div>
     <select class="form-select" aria-label="Default select example">
       <option selected>Order Type</option>
-      <option value="1">In-Person</option>
-      <option value="2">Phone</option>
+      <option value="in-person"${obj.orderType === 'in-person' ? 'selected' : ''}>In-Person</option>
+      <option value="phone"${obj.orderType === 'phone' ? 'selected' : ''}>Phone</option>
     </select>
+    <button type="submit" class="btn btn-success mt-3">Create/Edit Order</button>
 </form>`;
   renderToDOM('#formContainer', domString);
 };

@@ -7,7 +7,7 @@ const domEvents = () => {
       console.warn('VIEW ORDERS');
     }
     // VIEW CREATE ORDER PAGE
-    if (e.target.id === 'createOrdersBtn') {
+    if (e.target.id === 'createOrderBtn') {
       console.warn('Create Order');
       createOrderForm();
     }

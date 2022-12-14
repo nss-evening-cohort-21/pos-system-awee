@@ -1,4 +1,4 @@
-import { getAllRevenue } from '../api/revenueData';
+import { getRevenueDetails } from '../api/revenueData';
 import viewRevenuePage from '../pages/viewRevenuePage';
 import createOrderForm from '../pages/createOrderPage';
 import { getAllOrders, getSingleOrder } from '../api/orderData';
@@ -21,7 +21,7 @@ const domEvents = () => {
     }
     // VIEW REVENUE PAGE
     if (e.target.id === 'viewRevenueBtn') {
-      getAllRevenue().then(viewRevenuePage);
+      getRevenueDetails().then(viewRevenuePage);
     }
     // VIEW ORDER DETAILS
     if (e.target.id.includes('orderCardDetails')) {

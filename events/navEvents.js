@@ -1,7 +1,7 @@
 import createOrderForm from '../pages/createOrderPage';
 import { getAllOrders } from '../api/orderData';
 import homePage from '../pages/homePage';
-import { getAllRevenue } from '../api/revenueData';
+import { getRevenueDetails } from '../api/revenueData';
 import viewRevenuePage from '../pages/viewRevenuePage';
 import viewOrdersPage from '../pages/viewOrdersPage';
 
@@ -17,7 +17,7 @@ const navEvents = (user) => {
     }
     // VIEW REVENUE PAGE
     if (e.target.id === 'view-revenue') {
-      getAllRevenue().then(viewRevenuePage);
+      getRevenueDetails().then(viewRevenuePage);
     }
     // LOGO/VIEW WELCOME PAGE
     if (e.target.id === 'navbar-hhpw-logo') {

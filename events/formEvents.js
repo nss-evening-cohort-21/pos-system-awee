@@ -27,11 +27,14 @@ const formEvents = () => {
     }
     // UPDATE ORDER
     if (e.target.id.includes('update-order')) {
+      const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         name: document.querySelector('#orderName').value,
         phone: document.querySelector('#phone').value,
         email: document.querySelector('#email').value,
         orderType: document.querySelector('#orderType').value,
+        statusOpen: true,
+        firebaseKey
       };
 
       patchOrder(payload).then(() => {

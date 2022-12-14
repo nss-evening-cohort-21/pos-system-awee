@@ -3,7 +3,7 @@ import viewRevenuePage from '../pages/viewRevenuePage';
 import createOrderForm from '../pages/createOrderPage';
 import { getAllOrders, getSingleOrder } from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
-import { getAllItems } from '../api/itemData';
+import { getOrderDetails } from '../api/itemData';
 import viewOrderDetails from '../pages/orderDetailsPage';
 
 const domEvents = () => {
@@ -25,7 +25,7 @@ const domEvents = () => {
     // VIEW ORDER DETAILS
     if (e.target.id.includes('orderCardDetails')) {
       console.warn('DETAILS', firebaseKey);
-      getAllItems().then(viewOrderDetails);
+      getOrderDetails(firebaseKey).then(viewOrderDetails);
     }
     // EDIT ORDER
     if (e.target.id.includes('orderCardEdit')) {

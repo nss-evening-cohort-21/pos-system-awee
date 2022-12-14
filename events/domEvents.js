@@ -4,7 +4,7 @@ import createOrderForm from '../pages/createOrderPage';
 import { getAllOrders, getSingleOrder } from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
 import createItemForm from '../pages/createItemPage';
-import { getAllItems } from '../api/itemData';
+import { getAllItems, getSingleItem } from '../api/itemData';
 import viewOrderDetails from '../pages/orderDetailsPage';
 
 const domEvents = () => {
@@ -37,16 +37,19 @@ const domEvents = () => {
     if (e.target.id.includes('orderCardDelete')) {
       console.warn('DELETE', firebaseKey);
     }
-    // VIEW CREATE/ADD ITEM PAGE
-    if (e.target.id === 'test-edit-item') {
-      console.warn('CLICKED ADD/EDIT ITEM');
+    // EDIT ITEM
+    if (e.target.id.includes('edit-item-btn')) {
+      console.warn('CLICKED EDIT ITEM', firebaseKey);
+      getSingleItem(firebaseKey).then((itemObj) => createItemForm(itemObj));
+    }
+    // DELETE ITEM
+
+    // ADD ITEM
+    if (e.target.id === 'add-item-btn') {
+      console.warn('CLICKED ADD ITEM');
       createItemForm();
     }
     // GO TO PAYMENT
-
-    // EDIT ITEM
-
-    // DELETE ITEM
   });
 };
 

@@ -1,6 +1,7 @@
 import { getAllItems, patchItem, postItem } from '../api/itemData';
 import { postOrder, patchOrder, getAllOrders } from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
+import viewOrderDetails from '../pages/orderDetailsPage';
 
 const formEvents = () => {
   document.querySelector('#formContainer').addEventListener('submit', (e) => {
@@ -53,16 +54,23 @@ const formEvents = () => {
         const patchPayload = { firebaseKey: name };
 
         patchItem(patchPayload).then(() => {
-          getAllItems().then();
+          getAllItems().then(viewOrderDetails);
         });
       });
     }
     // UPDATE ITEM
-    if (e.target.id === 'add-edit-item-btn') {
-      console.warn('CLICKED ADD/EDIT ITEM');
-      // render order details page to DOM -- pass in order's firebaseKey?
-    }
+    if (e.target.id.includes('update-item')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        itemName: document.querySelector('#itemName').value,
+        price: document.querySelector('#itemPrice').value,
+        firebaseKey
+      };
 
+      patchOrder(payload).then(() => {
+        getAllItems().then(viewOrderDetails);
+      });
+    }
     // CLOSE ORDER
   });
 };

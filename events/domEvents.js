@@ -4,6 +4,8 @@ import createOrderForm from '../pages/createOrderPage';
 import { getAllOrders, getSingleOrder } from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
 import createItemForm from '../pages/createItemPage';
+import { getAllItems } from '../api/itemData';
+import viewOrderDetails from '../pages/orderDetailsPage';
 
 const domEvents = () => {
   document.querySelector('#main').addEventListener('click', (e) => {
@@ -24,6 +26,7 @@ const domEvents = () => {
     // VIEW ORDER DETAILS
     if (e.target.id.includes('orderCardDetails')) {
       console.warn('DETAILS', firebaseKey);
+      getAllItems().then(viewOrderDetails);
     }
     // EDIT ORDER
     if (e.target.id.includes('orderCardEdit')) {

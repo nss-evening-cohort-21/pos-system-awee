@@ -15,12 +15,12 @@ const createOrderForm = (obj = {}) => {
         <input type="tel" class="form-control" id="phone" value="${obj.phone || ''}">
       </div>
       <div class="mb-3" style="text-align:left">
-        <label for="customerEmail" class="form-label">Customer Email</label>
-        <input type="email" class="form-control" id="customerEmail" value="${obj.email || ''}">
+        <label for="email" class="form-label">Customer Email</label>
+        <input type="email" class="form-control" id="email" value="${obj.email || ''}">
       </div>
       <div class="mb-3" style="text-align:left">
         <label for="orderType" class="form-label">Order Type</label>  
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" aria-label="Default select example" id="orderType">
           <option selected>Select an Order Type</option>
           <option value="in-person"${obj.orderType === 'in-person' ? 'selected' : ''}>In-Person</option>
           <option value="phone"${obj.orderType === 'phone' ? 'selected' : ''}>Phone</option>

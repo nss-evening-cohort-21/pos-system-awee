@@ -33,15 +33,14 @@ const domEvents = () => {
     if (e.target.id.includes('orderCardDelete')) {
       console.warn('DELETE', firebasekey);
     }
-    // VIEW ADD ITEM PAGE
-
+    // VIEW CREATE/ADD ITEM PAGE
+    if (e.target.id === 'test-edit-item') {
+      console.warn('CLICKED ADD/EDIT ITEM');
+      createItemForm();
+    }
     // GO TO PAYMENT
 
     // EDIT ITEM
-    if (e.target.id === 'test-edit-item') {
-      console.warn('CLICKED EDIT ITEM');
-      createItemForm();
-    }
 
     // DELETE ITEM
   });

@@ -70,6 +70,30 @@ const deleteRevenue = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getRevenueTotal = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/revenue.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        const dataArr = Object.values(data);
+        const totalRevenue = dataArr.map((item) => Number(item.total)).reduce((a, b) => a + b, 0)
+          .toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+          });
+        resolve(totalRevenue);
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 export {
-  getAllRevenue, getSingleRevenue, patchRevenue, postRevenue, deleteRevenue
+  getAllRevenue, getSingleRevenue, patchRevenue, postRevenue, deleteRevenue, getRevenueTotal
 };

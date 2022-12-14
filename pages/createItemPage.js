@@ -14,7 +14,7 @@ const createItemForm = (obj = {}) => {
         <label for="itemPrice" class="form-label">Item Price</label>
         <input type="tel" class="form-control" id="itemPrice" value="${obj.price || ''}">
       </div>
-      <button type="submit" class="btn btn-success mt-3">Add/Edit Item</button>
+      <button type="submit" class="btn btn-success mt-3" id="add-edit-item-btn">Add/Edit Item</button>
     </form>
   </div>
   `;

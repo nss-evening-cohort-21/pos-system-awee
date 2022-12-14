@@ -3,6 +3,7 @@ import viewRevenuePage from '../pages/viewRevenuePage';
 import createOrderForm from '../pages/createOrderPage';
 import { getAllOrders } from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
+import createItemForm from '../pages/createItemPage';
 
 const domEvents = () => {
   document.querySelector('#main').addEventListener('click', (e) => {
@@ -37,6 +38,10 @@ const domEvents = () => {
     // GO TO PAYMENT
 
     // EDIT ITEM
+    if (e.target.id === 'test-edit-item') {
+      console.warn('CLICKED EDIT ITEM');
+      createItemForm();
+    }
 
     // DELETE ITEM
   });

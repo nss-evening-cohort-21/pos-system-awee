@@ -1,5 +1,9 @@
+import {
+  patchItem, postItem, getOrderDetails
+} from '../api/itemData';
 import { postOrder, patchOrder, getAllOrders } from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
+import viewOrderDetails from '../pages/orderDetailsPage';
 
 const formEvents = () => {
   document.querySelector('#formContainer').addEventListener('submit', (e) => {
@@ -41,9 +45,36 @@ const formEvents = () => {
       });
     }
     // ADD ITEM
+    if (e.target.id.includes('submit-item')) {
+      console.warn('CLICKED ADD/EDIT ITEM');
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        itemName: document.querySelector('#itemName').value,
+        price: document.querySelector('#itemPrice').value,
+        orderID: firebaseKey
+      };
 
+      postItem(payload).then(({ name }) => {
+        const patchPayload = { firebaseKey: name };
+
+        patchItem(patchPayload).then(() => {
+          getOrderDetails(firebaseKey).then(viewOrderDetails);
+        });
+      });
+    }
     // UPDATE ITEM
+    if (e.target.id.includes('update-item')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        itemName: document.querySelector('#itemName').value,
+        price: document.querySelector('#itemPrice').value,
+        firebaseKey
+      };
 
+      patchItem(payload).then(() => {
+        getOrderDetails(firebaseKey).then(viewOrderDetails);
+      });
+    }
     // CLOSE ORDER
   });
 };

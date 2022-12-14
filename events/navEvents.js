@@ -20,7 +20,7 @@ const navEvents = (user) => {
       getAllRevenue().then(viewRevenuePage);
     }
     // LOGO/VIEW WELCOME PAGE
-    if (e.target.id.includes('navbar-hhpw-logo')) {
+    if (e.target.id === 'navbar-hhpw-logo') {
       homePage(user);
     }
   });

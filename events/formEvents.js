@@ -33,7 +33,6 @@ const formEvents = () => {
         phone: document.querySelector('#phone').value,
         email: document.querySelector('#email').value,
         orderType: document.querySelector('#orderType').value,
-        statusOpen: true,
         firebaseKey
       };
 

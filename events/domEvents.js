@@ -24,7 +24,7 @@ const domEvents = () => {
     }
     // VIEW ORDER DETAILS
     if (e.target.id.includes('orderCardDetails')) {
-      console.warn('DETAILS', firebasekey);
+      console.warn('DETAILS', firebaseKey);
       getAllItems().then(viewOrderDetails);
     }
     // EDIT ORDER

@@ -3,7 +3,7 @@ import renderToDOM from '../utils/renderToDOM';
 
 const viewOrderDetails = (array) => {
   clearDOM();
-  const domString = '<h2>Order Total: </h2><hr><div id="itemCards-container" style="display: flex; flex-wrap: wrap;"></div><button class="btn btn-primary gap-2 col-5 m-1" type="button" id="add-item-btn">Add Item</button><button class="btn btn-success gap-2 col-5 m-1" id="go-to-payment-btn" type="button">Go To Payment</button>';
+  const domString = '<h2>Order Total: </h2><hr><div id="itemCards-container" style="display: flex; flex-wrap: wrap;margin-bottom: 35px;"></div><button class="btn btn-primary gap-2 col-3 m-1" type="button" id="add-item-btn">Add Item</button><button class="btn btn-success gap-2 col-3 m-1" id="go-to-payment-btn" type="button">Go To Payment</button>';
   renderToDOM('#main', domString);
 
   let cardString = '';

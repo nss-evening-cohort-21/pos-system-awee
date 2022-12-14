@@ -18,10 +18,7 @@ const navEvents = (user) => {
     // VIEW REVENUE PAGE
     if (e.target.id === 'view-revenue') {
       // getRevenueDetails();
-      getRevenueDetails().then((obj) => {
-        console.warn(obj);
-        viewRevenuePage(obj);
-      });
+      getRevenueDetails().then(viewRevenuePage);
     }
     // LOGO/VIEW WELCOME PAGE
     if (e.target.id.includes('navbar-hhpw-logo')) {

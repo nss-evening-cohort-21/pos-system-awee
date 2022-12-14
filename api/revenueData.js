@@ -96,7 +96,7 @@ const getRevenueDetails = () => new Promise((resolve, reject) => {
           totalTips
         };
         console.warn(revObj);
-        // resolve(totalRevenue);
+        resolve(revObj);
       } else {
         resolve([]);
       }

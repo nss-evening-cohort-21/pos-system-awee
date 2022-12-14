@@ -70,7 +70,7 @@ const deleteRevenue = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getRevenueTotal = () => new Promise((resolve, reject) => {
+const getRevenueDetails = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/revenue.json`, {
     method: 'GET',
     headers: {
@@ -86,7 +86,42 @@ const getRevenueTotal = () => new Promise((resolve, reject) => {
             style: 'currency',
             currency: 'USD'
           });
-        resolve(totalRevenue);
+        const totalTips = dataArr.map((item) => Number(item.tip)).reduce((a, b) => a + b, 0)
+          .toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+          });
+        const revObj = {
+          totalRevenue,
+          totalTips
+        };
+        console.warn(revObj);
+        // resolve(totalRevenue);
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
+const getTipsTotal = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/revenue.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        const dataArr = Object.values(data);
+        const totalTips = dataArr.map((item) => Number(item.tip)).reduce((a, b) => a + b, 0)
+          .toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+          });
+        console.warn('TIPS', totalTips);
+        // resolve(totalTips);
       } else {
         resolve([]);
       }
@@ -95,5 +130,5 @@ const getRevenueTotal = () => new Promise((resolve, reject) => {
 });
 
 export {
-  getAllRevenue, getSingleRevenue, patchRevenue, postRevenue, deleteRevenue, getRevenueTotal
+  getAllRevenue, getSingleRevenue, patchRevenue, postRevenue, deleteRevenue, getRevenueDetails, getTipsTotal
 };

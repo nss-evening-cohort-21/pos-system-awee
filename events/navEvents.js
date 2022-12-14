@@ -1,8 +1,8 @@
 import createOrderForm from '../pages/createOrderPage';
 import { getAllOrders } from '../api/orderData';
 import homePage from '../pages/homePage';
-import { getRevenueTotal } from '../api/revenueData';
-import viewRevenuePage from '../pages/viewRevenuePage';
+import { getRevenueDetails } from '../api/revenueData';
+// import viewRevenuePage from '../pages/viewRevenuePage';
 import viewOrdersPage from '../pages/viewOrdersPage';
 
 const navEvents = (user) => {
@@ -17,10 +17,11 @@ const navEvents = (user) => {
     }
     // VIEW REVENUE PAGE
     if (e.target.id === 'view-revenue') {
-      getRevenueTotal().then((rev) => {
-        console.warn(rev);
-        viewRevenuePage(rev);
-      });
+      getRevenueDetails();
+      // getRevenueTotal().then((rev) => {
+      //   console.warn(rev);
+      //   viewRevenuePage(rev);
+      // });
     }
     // LOGO/VIEW WELCOME PAGE
     if (e.target.id.includes('navbar-hhpw-logo')) {

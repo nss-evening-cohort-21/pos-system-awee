@@ -24,9 +24,6 @@ const navBar = () => {
             <li class="nav-item">
               <a class="nav-link" href="#" id="view-revenue">Revenue</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#" id="test-edit-item">Edit Item</a>
-            </li>
           </ul>
           <span>
             <input

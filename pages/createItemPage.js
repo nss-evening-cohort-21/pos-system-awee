@@ -5,7 +5,7 @@ const createItemForm = (obj = {}) => {
   clearDom();
   const domString = `
   <div id="create-item-container">
-    <form id="${obj.firebaseKey ? `update-item--${obj.firebaseKey}` : `submit-item--${obj.firebaseKey}`}">
+    <form id="${obj.orderID ? `update-item--${obj.firebaseKey}` : `submit-item--${obj.firebaseKey}`}">
       <div class="mb-3" style="text-align:left">
         <label for="itemName" class="form-label">Item Name</label>
         <input type="text" class="form-control" id="itemName" value="${obj.itemName || ''}">

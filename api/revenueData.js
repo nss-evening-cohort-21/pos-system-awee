@@ -98,7 +98,6 @@ const getRevenueDetails = () => new Promise((resolve, reject) => {
         const debitOrders = dataArr.filter((item) => item.paymentType === 'debit').length;
         const creditOrders = dataArr.filter((item) => item.paymentType === 'credit').length;
         const mobileOrders = dataArr.filter((item) => item.paymentType === 'mobile').length;
-        // cash, check, debit, credit, or mobile
         const revObj = {
           totalRevenue,
           totalTips,
@@ -110,7 +109,6 @@ const getRevenueDetails = () => new Promise((resolve, reject) => {
           creditOrders,
           mobileOrders
         };
-        console.warn(revObj);
         resolve(revObj);
       } else {
         resolve([]);

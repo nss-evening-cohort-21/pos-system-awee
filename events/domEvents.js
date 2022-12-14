@@ -1,14 +1,14 @@
 import { getAllRevenue } from '../api/revenueData';
 import viewRevenuePage from '../pages/viewRevenuePage';
 import createOrderForm from '../pages/createOrderPage';
-import { getAllOrders } from '../api/orderData';
+import { getAllOrders, getSingleOrder } from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
 import { getAllItems } from '../api/itemData';
 import viewOrderDetails from '../pages/orderDetailsPage';
 
 const domEvents = () => {
   document.querySelector('#main').addEventListener('click', (e) => {
-    const [, firebasekey] = e.target.id.split('--');
+    const [, firebaseKey] = e.target.id.split('--');
     // VIEW ORDERS PAGE
     if (e.target.id === 'viewOrdersBtn') {
       getAllOrders().then(viewOrdersPage);
@@ -29,11 +29,12 @@ const domEvents = () => {
     }
     // EDIT ORDER
     if (e.target.id.includes('orderCardEdit')) {
-      console.warn('EDIT', firebasekey);
+      console.warn('EDIT', firebaseKey);
+      getSingleOrder(firebaseKey).then((orderObj) => createOrderForm(orderObj));
     }
     // DELETE ORDER
     if (e.target.id.includes('orderCardDelete')) {
-      console.warn('DELETE', firebasekey);
+      console.warn('DELETE', firebaseKey);
     }
     // VIEW ADD ITEM PAGE
 

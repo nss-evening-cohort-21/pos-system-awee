@@ -17,7 +17,6 @@ const navEvents = (user) => {
     }
     // VIEW REVENUE PAGE
     if (e.target.id === 'view-revenue') {
-      // getRevenueDetails();
       getRevenueDetails().then(viewRevenuePage);
     }
     // LOGO/VIEW WELCOME PAGE

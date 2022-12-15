@@ -8,7 +8,16 @@ const viewOrderDetails = (array) => {
 
   let cardString = '';
   array.forEach((item) => {
-    cardString += `<div class="card w-50 m-2"><div class="card-body"><h5 class="card-title text-start">${item.itemName}</h5><h5 class="card-text text-start">Price: ${item.price}</h5><div class="card-body text-start"><a href="#" class="card-link" id="edit-item-btn--${item.firebaseKey}">Edit Item</a><a href="#" class="card-link" id="delete-item-btn--${item.firebaseKey}">Delete Item</a></div></div></div>`;
+    cardString += `
+      <div class="card w-50 m-2">
+        <div class="card-body">
+          <h5 class="card-title text-start">${item.itemName}</h5>
+          <h5 class="card-text text-start">Price: ${item.price}</h5>
+          <div class="card-body text-start">
+            <a href="#" class="card-link" id="edit-item-btn--${item.firebaseKey}">Edit Item</a><a href="#" class="card-link" id="delete-item-btn--${item.firebaseKey}">Delete Item</a>
+          </div>
+        </div>
+      </div>`;
   });
   renderToDOM('#itemCards-container', cardString);
 };

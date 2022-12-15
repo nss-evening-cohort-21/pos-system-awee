@@ -6,6 +6,7 @@ import viewOrdersPage from '../pages/viewOrdersPage';
 import createItemForm from '../pages/createItemPage';
 import { getSingleItem, getOrderDetails } from '../api/itemData';
 import viewOrderDetails from '../pages/orderDetailsPage';
+import closeOrderPage from '../pages/closeOrderPage';
 
 const domEvents = () => {
   document.querySelector('#main').addEventListener('click', (e) => {
@@ -50,6 +51,10 @@ const domEvents = () => {
       createItemForm();
     }
     // GO TO PAYMENT
+    if (e.target.id === 'go-to-payment-btn') {
+      console.warn('Go to payment');
+      closeOrderPage();
+    }
   });
 };
 

@@ -76,6 +76,9 @@ const formEvents = () => {
       });
     }
     // CLOSE ORDER
+    if (e.target.id.includes('close-order')) {
+      console.warn('closed order');
+    }
   });
 };
 

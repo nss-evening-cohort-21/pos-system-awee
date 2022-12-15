@@ -22,7 +22,7 @@ const closeOrderPage = () => {
         <div class="row">
           <div class="mb-3 form-group col-sm-6 mx-auto">
             <label for="tip amount" class="form-label">Tip Amount</label>
-              <input type="text" class="form-control" id="tipAmount" name="tipAmount" placeholder="0.00" required>
+              <input type="text" class="form-control" id="tipAmount" name="tipAmount" placeholder="0.00" pattern="[0-9]+(\\.[0-9][0-9]?)?" required>
           </div>
         </div>
         <button type="submit" class="btn btn-success">Close Order</button>

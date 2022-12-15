@@ -70,6 +70,30 @@ const deleteOrder = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getOrderTotal = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/items.json?orderBy="orderID"&equalTo="${firebaseKey}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        const dataArr = Object.values(data);
+        const orderTotal = dataArr.map((item) => Number(item.price)).reduce((a, b) => a + b, 0)
+          .toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+          });
+        resolve(orderTotal);
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 export {
-  getAllOrders, getSingleOrder, patchOrder, postOrder, deleteOrder
+  getAllOrders, getSingleOrder, patchOrder, postOrder, deleteOrder, getOrderTotal
 };

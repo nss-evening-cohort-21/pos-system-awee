@@ -1,10 +1,9 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "~bootstrap/scss/bootstrap";
-
+import 
 
 
 body {
-  background-image: url('~/assets/abstract_background.jpg');
   background-color: #03071e;
   color: #9a031e;
   text-align: center;
@@ -36,4 +35,10 @@ body {
 
 .navbar {
   background-color: #03071e;
+}
+
+#login-page {
+  background-image: url('../assets/abstract_background.jpg');
+  background-color: green;
+  text-align: center;
 }

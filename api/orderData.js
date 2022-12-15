@@ -1,4 +1,5 @@
 import client from '../utils/client';
+import { deleteItem, getOrderDetails } from './itemData';
 
 const endpoint = client.databaseURL;
 
@@ -94,6 +95,16 @@ const getOrderTotal = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const deleteOrderItemsRelationship = (firebaseKey) => new Promise((resolve, reject) => {
+  getOrderDetails(firebaseKey).then((orderItemsArray) => {
+    const deleteItemPromises = orderItemsArray.map((item) => deleteItem(item.firebaseKey));
+
+    Promise.all(deleteItemPromises).then(() => {
+      deleteOrder(firebaseKey).then(resolve);
+    });
+  }).catch(reject);
+});
+
 export {
-  getAllOrders, getSingleOrder, patchOrder, postOrder, deleteOrder, getOrderTotal
+  getAllOrders, getSingleOrder, patchOrder, postOrder, deleteOrder, getOrderTotal, deleteOrderItemsRelationship
 };

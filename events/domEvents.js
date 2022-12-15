@@ -17,7 +17,6 @@ const domEvents = () => {
     }
     // VIEW CREATE ORDER PAGE
     if (e.target.id === 'createOrderBtn') {
-      console.warn('Create Order');
       createOrderForm();
     }
     // VIEW REVENUE PAGE
@@ -26,12 +25,14 @@ const domEvents = () => {
     }
     // VIEW ORDER DETAILS
     if (e.target.id.includes('orderCardDetails')) {
-      console.warn('DETAILS', firebaseKey);
-      getOrderDetails(firebaseKey).then(viewOrderDetails);
+      getOrderDetails(firebaseKey).then((arr) => {
+        getSingleOrder(firebaseKey).then((obj) => {
+          viewOrderDetails(obj, arr);
+        });
+      });
     }
     // EDIT ORDER
     if (e.target.id.includes('orderCardEdit')) {
-      console.warn('EDIT', firebaseKey);
       getSingleOrder(firebaseKey).then((orderObj) => createOrderForm(orderObj));
     }
     // DELETE ORDER
@@ -40,15 +41,15 @@ const domEvents = () => {
     }
     // EDIT ITEM
     if (e.target.id.includes('edit-item-btn')) {
-      console.warn('CLICKED EDIT ITEM', firebaseKey);
       getSingleItem(firebaseKey).then((itemObj) => createItemForm(itemObj));
     }
     // DELETE ITEM
 
     // ADD ITEM
-    if (e.target.id === 'add-item-btn') {
-      console.warn('CLICKED ADD ITEM');
-      createItemForm();
+    if (e.target.id.includes('add-item-btn')) {
+      getSingleOrder(firebaseKey).then((obj) => {
+        createItemForm(obj);
+      });
     }
     // GO TO PAYMENT
     if (e.target.id === 'go-to-payment-btn') {

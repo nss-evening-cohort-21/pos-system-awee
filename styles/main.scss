@@ -1,11 +1,14 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: #431259;
+  color: black;
   text-align: center;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
 }
 
 #createOrderContainer, #create-item-container {
@@ -14,6 +17,7 @@ body {
   justify-content: center;
 }
 
+// order-card-related
 #orderCardsDiv {
   width: 90%;
   display: flex;
@@ -30,4 +34,203 @@ body {
   .card-text {
     font-size: 18px;
   }
+
+  .card-title {
+    font-family: 'Rubik Dirt', cursive;
+  }
+
+  .card-subtitle {
+    color: #8338ec;
+    font-weight: 400;
+  }
+}
+
+
+// text-styling
+  .cust-info {
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+  }
+
+  .order-type {
+    color:#4361ee;
+    font-weight: 500;
+    margin: 10px;
+  }
+
+  .details {
+    color: #ffba08;
+  }
+
+  .edit {
+    color: #52b788;
+  }
+
+  .delete {
+    color: #ff5400;
+  }
+
+  .card-link:hover {
+    color: black;
+  }
+
+
+//login-page-positioning
+#login-page {
+  background-color: #03071e;
+  text-align: center;
+}
+
+.image-container {
+  position: relative;
+}
+
+.background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.logo {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
+
+.login-button {
+  position: absolute;
+  top: 80%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//homepage-positioning
+.homepage-content {
+  position: absolute;
+  top: 30%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.homepage-buttons {
+  padding: 8px;
+  width: 200px;
+  justify-content: center;
+}
+
+.logo-hp {
+  position: absolute;
+  top: 130%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// general
+.header {
+  font-family: 'Rubik Dirt', cursive;
+  padding: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+// button-style-related
+.btn {
+  color: white;
+  margin:0px 10px 0px 10px;
+  font-weight: 700;
+}
+
+.btn:hover {
+  background-color: #03071e;
+  border-color: #03071e;
+  color: white;
+}
+
+.btn-purple {
+  background-color: #8338ec;
+  border-color: #8338ec;
+}
+
+.btn-green {
+  background-color: #52b788; 
+  border-color: #52b788;
+}
+
+.btn-pink {
+  background-color: #e500a4;
+  border-color: #e500a4;
+  color: black; 
+}
+
+.btn-orange {
+  background-color: #ff5400;
+  border-color: #ff5400;
+  color: black;
+}
+
+.btn-yellow {
+  background-color: #ffba08;
+  border-color: #ffba08;
+  color: black;
+}
+
+
+.btn-blue {
+  background-color: #4361ee;
+  border-color: #4361ee;
+}
+
+// searchbar
+.search {
+  font-weight: 700;
+}
+
+// item-card-style-related
+
+#itemCards-container {
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+}
+
+.item-card {
+  align-items: center;
+}
+
+.item-name {
+  font-weight: 900;
+  color: #4361ee;
+}
+
+.item-price {
+  color:#8338ec;
+  font-weight: 700;
+}
+
+.btn-margin {
+  margin: 20px;
+}
+
+// form-revenue-related
+.form-text  {
+  color:white;
+  font-weight: 700;
+}
+
+.rev-text {
+  color:white;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.total {
+  font-family: 'Rubik Dirt', cursive;
+  color:#ffba08;
+  text-shadow: 2px 2px 4px #000000;
 }

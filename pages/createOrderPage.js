@@ -5,7 +5,7 @@ const createOrderForm = (obj = {}) => {
   clearDom();
   const domString = `
   <div id="createOrderContainer">
-    <form id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}">
+    <form class="form-text" id="${obj.firebaseKey ? `update-order--${obj.firebaseKey}` : 'submit-order'}">
       <div class="mb-3" style="text-align:left">
         <label for="orderName" class="form-label">Order Name</label>
         <input type="text" class="form-control" id="orderName" value="${obj.name || ''}" required>
@@ -26,7 +26,7 @@ const createOrderForm = (obj = {}) => {
           <option value="phone"${obj.orderType === 'phone' ? 'selected' : ''}>Phone</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-success mt-3">Create/Edit Order</button>
+      <button type="submit" class="btn btn-yellow mt-3">Create/Edit Order</button>
     </form>
   </div> `;
   renderToDOM('#formContainer', domString);

@@ -1,5 +1,5 @@
 import createOrderForm from '../pages/createOrderPage';
-import { getAllOrders } from '../api/orderData';
+import { getAllOrders, getClosedOrders, getOpenOrders } from '../api/orderData';
 import homePage from '../pages/homePage';
 import { getRevenueDetails } from '../api/revenueData';
 import viewRevenuePage from '../pages/viewRevenuePage';
@@ -23,11 +23,26 @@ const navEvents = (user) => {
     if (e.target.id === 'navbar-hhpw-logo') {
       homePage(user);
     }
+    // DROPDOWN FILTERS
+    if (e.target.id === 'dropLinkOpen') {
+      getOpenOrders().then((arr) => {
+        viewOrdersPage(arr);
+        document.querySelector('#viewOrdersHeading').innerHTML = 'Open Orders';
+      });
+    }
+    if (e.target.id === 'dropLinkClosed') {
+      getClosedOrders().then((arr) => {
+        viewOrdersPage(arr);
+        document.querySelector('#viewOrdersHeading').innerHTML = 'Closed Orders';
+      });
+    }
+    if (e.target.id === 'dropLinkAll') {
+      getAllOrders().then(viewOrdersPage);
+    }
   });
   // SEARCH
   document.querySelector('#searchBtn').addEventListener('click', (e) => {
     const searchValue = document.querySelector('#search').value.toLowerCase();
-    console.warn(searchValue);
     if (e) {
       getAllOrders(user.uid).then((orders) => {
         const filteredOrders = orders.filter((item) => item.name.toLowerCase().includes(searchValue) || item.phone.includes(searchValue));

@@ -87,7 +87,6 @@ const formEvents = () => {
     // CLOSE ORDER
     if (e.target.id.includes('close-order-form')) {
       const [, firebaseKey] = e.target.id.split('--');
-      console.warn(firebaseKey);
       const payload = {
         statusOpen: false,
         firebaseKey

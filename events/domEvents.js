@@ -4,7 +4,7 @@ import createOrderForm from '../pages/createOrderPage';
 import { deleteOrderItemsRelationship, getAllOrders, getSingleOrder } from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
 import createItemForm from '../pages/createItemPage';
-import { getSingleItem, getOrderDetails } from '../api/itemData';
+import { getSingleItem, getOrderDetails, deleteItem } from '../api/itemData';
 import viewOrderDetails from '../pages/orderDetailsPage';
 import closeOrderPage from '../pages/closeOrderPage';
 
@@ -49,7 +49,21 @@ const domEvents = () => {
       getSingleItem(firebaseKey).then((itemObj) => createItemForm(itemObj));
     }
     // DELETE ITEM
-
+    if (e.target.id.includes('delete-item-btn')) {
+      console.warn('DELETE-ITEM', firebaseKey);
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Delete this item?')) {
+        getSingleItem(firebaseKey).then((item) => {
+          getSingleOrder(item.orderID).then((order) => {
+            deleteItem(firebaseKey).then(() => {
+              getOrderDetails(order.firebaseKey).then((arr) => {
+                viewOrderDetails(order, arr);
+              });
+            });
+          });
+        });
+      }
+    }
     // ADD ITEM
     if (e.target.id.includes('add-item-btn')) {
       getSingleOrder(firebaseKey).then((obj) => {

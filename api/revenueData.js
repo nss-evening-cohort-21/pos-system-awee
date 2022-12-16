@@ -2,36 +2,6 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-const getAllRevenue = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/revenue.json`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data) {
-        resolve(Object.values(data));
-      } else {
-        resolve([]);
-      }
-    })
-    .catch(reject);
-});
-
-const getSingleRevenue = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/revenue/${firebaseKey}.json`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(data))
-    .catch(reject);
-});
-
 const postRevenue = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/revenue.json`, {
     method: 'POST',
@@ -58,18 +28,6 @@ const patchRevenue = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const deleteRevenue = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/revenue/${firebaseKey}.json`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(data))
-    .catch(reject);
-});
-
 const getRevenueDetails = () => new Promise((resolve, reject) => {
   fetch(`${endpoint}/revenue.json`, {
     method: 'GET',
@@ -81,36 +39,21 @@ const getRevenueDetails = () => new Promise((resolve, reject) => {
     .then((data) => {
       if (data) {
         const dataArr = Object.values(data);
-        const totalRevenue = dataArr.map((item) => Number(item.total)).reduce((a, b) => a + b, 0)
-          .toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD'
-          });
-        const totalTips = dataArr.map((item) => Number(item.tip)).reduce((a, b) => a + b, 0)
-          .toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD'
-          });
-        const callInOrders = dataArr.filter((item) => item.orderType === 'phone').length;
-        const walkInOrders = dataArr.filter((item) => item.orderType === 'in-person').length;
-        const cashOrders = dataArr.filter((item) => item.paymentType === 'cash').length;
-        const checkOrders = dataArr.filter((item) => item.paymentType === 'check').length;
-        const debitOrders = dataArr.filter((item) => item.paymentType === 'debit').length;
-        const creditOrders = dataArr.filter((item) => item.paymentType === 'credit').length;
-        const mobileOrders = dataArr.filter((item) => item.paymentType === 'mobile').length;
-        // cash, check, debit, credit, or mobile
+        const totalRevenue = dataArr.map((item) => Number(item.total)).reduce((a, b) => a + b, 0);
+        const totalTips = dataArr.map((item) => Number(item.tip)).reduce((a, b) => a + b, 0);
+        const combinedRevenue = totalRevenue + totalTips;
         const revObj = {
+          combinedRevenue,
           totalRevenue,
           totalTips,
-          callInOrders,
-          walkInOrders,
-          cashOrders,
-          checkOrders,
-          debitOrders,
-          creditOrders,
-          mobileOrders
+          callInOrders: dataArr.filter((item) => item.orderType === 'phone').length,
+          walkInOrders: dataArr.filter((item) => item.orderType === 'in-person').length,
+          cashOrders: dataArr.filter((item) => item.paymentType === 'cash').length,
+          checkOrders: dataArr.filter((item) => item.paymentType === 'check').length,
+          debitOrders: dataArr.filter((item) => item.paymentType === 'debit').length,
+          creditOrders: dataArr.filter((item) => item.paymentType === 'credit').length,
+          mobileOrders: dataArr.filter((item) => item.paymentType === 'mobile').length
         };
-        console.warn(revObj);
         resolve(revObj);
       } else {
         resolve([]);
@@ -120,5 +63,5 @@ const getRevenueDetails = () => new Promise((resolve, reject) => {
 });
 
 export {
-  getAllRevenue, getSingleRevenue, patchRevenue, postRevenue, deleteRevenue, getRevenueDetails
+  patchRevenue, postRevenue, getRevenueDetails
 };

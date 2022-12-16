@@ -1,18 +1,17 @@
 import {
-  patchItem, postItem, getOrderDetails
+  patchItem, postItem, getOrderDetails, getSingleItem
 } from '../api/itemData';
-import { postOrder, patchOrder, getAllOrders } from '../api/orderData';
+import {
+  postOrder, patchOrder, getAllOrders, getSingleOrder
+} from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
 import viewOrderDetails from '../pages/orderDetailsPage';
 
 const formEvents = () => {
   document.querySelector('#formContainer').addEventListener('submit', (e) => {
     e.preventDefault();
-    // NEED TO ADD "e" INSIDE THE PARENTHESIS
-
     // ADD ORDER
     if (e.target.id.includes('submit-order')) {
-      console.warn('Clicked submit order');
       const payload = {
         name: document.querySelector('#orderName').value,
         phone: document.querySelector('#phone').value,
@@ -46,7 +45,6 @@ const formEvents = () => {
     }
     // ADD ITEM
     if (e.target.id.includes('submit-item')) {
-      console.warn('CLICKED ADD/EDIT ITEM');
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         itemName: document.querySelector('#itemName').value,
@@ -58,7 +56,11 @@ const formEvents = () => {
         const patchPayload = { firebaseKey: name };
 
         patchItem(patchPayload).then(() => {
-          getOrderDetails(firebaseKey).then(viewOrderDetails);
+          getOrderDetails(firebaseKey).then((arr) => {
+            getSingleOrder(firebaseKey).then((obj) => {
+              viewOrderDetails(obj, arr);
+            });
+          });
         });
       });
     }
@@ -72,10 +74,20 @@ const formEvents = () => {
       };
 
       patchItem(payload).then(() => {
-        getOrderDetails(firebaseKey).then(viewOrderDetails);
+        getSingleItem(firebaseKey).then((item) => {
+          getOrderDetails(item.orderID).then((arr) => {
+            getSingleOrder(item.orderID).then((obj) => {
+              viewOrderDetails(obj, arr);
+            });
+          });
+        });
       });
     }
     // CLOSE ORDER
+    if (e.target.id.includes('close-order')) {
+      console.warn('closed order');
+      getAllOrders().then(viewOrdersPage);
+    }
   });
 };
 

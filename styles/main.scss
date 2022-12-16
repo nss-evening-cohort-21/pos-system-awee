@@ -17,6 +17,7 @@ body {
   justify-content: center;
 }
 
+// order-card-related
 #orderCardsDiv {
   width: 90%;
   display: flex;
@@ -42,7 +43,9 @@ body {
     color: #8338ec;
     font-weight: 400;
   }
+}
 
+// text-styling
   .cust-info {
     font-weight: 700;
     padding: 0;
@@ -66,7 +69,7 @@ body {
   .delete {
     color: #ff5400;
   }
-}
+
 
 //login-page-positioning
 #login-page {
@@ -155,4 +158,33 @@ body {
 // searchbar
 .search {
   font-weight: 700;
+}
+
+// item-card-style-related
+
+#itemCards-container {
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+}
+
+.item-card {
+  align-items: center;
+}
+
+.item-name {
+  font-weight: 900;
+  color: #4361ee;
+}
+
+.item-price {
+  color:#8338ec;
+  font-weight: 700;
+}
+
+.btn-margin {
+  margin: 20px;
 }

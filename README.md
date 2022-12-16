@@ -1,9 +1,9 @@
-# Hip Hop, Pizza, and Wangs [![Netlify Status](https://api.netlify.com/api/v1/badges/4ab7e730-7ed3-4cfd-a988-66195e79a991/deploy-status)](https://app.netlify.com/sites/drt-sortinghat/deploys)
+# Hip Hop, Pizza, and Wangs [![Netlify Status](https://api.netlify.com/api/v1/badges/ba3f1ede-e60f-4141-bb58-833309f6ee8e/deploy-status)](https://app.netlify.com/sites/hhpw-awee/deploys)
 <!-- update the netlify badge above with your own badge that you can find at netlify under settings/general#status-badges -->
 
 In this project, we created a website for a resturant POS. 
 
-[View App](#your-link)
+[View App](https://hhpw-awee.netlify.app/)
 
 ## Get Started <!-- OPTIONAL, but doesn't hurt -->
 git clone .....
@@ -22,7 +22,7 @@ git clone .....
 https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
-- [Check out the deployed site](#your-link)
+- [Check out the deployed site](https://hhpw-awee.netlify.app/)
 - [Wireframes](https://www.figma.com/file/0WBbI9X6nxhNNrz6Sb3YxQ/Team-AWEE?node-id=0%3A1&t=Ir1OJ4QSX9n97gvK-0)
 
 ## Code Snippet 
@@ -52,7 +52,7 @@ https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
 <img width="1148" alt="Your Alt" src="your-link.png">
 
 ## Contributors
-- Allison Blumenthal (https://github.com/allison-blumenthal)
-- Eric Frey (https://github.com/ericlfrey)
-- Erin Stephens (https://github.com/erin-stephens)
-- Whitley Beers (https://github.com/WhitleyBeers)
+- [Allison Blumenthal](https://github.com/allison-blumenthal)
+- [Eric Frey](https://github.com/ericlfrey)
+- [Erin Stephens](https://github.com/erin-stephens)
+- [Whitley Beers](https://github.com/WhitleyBeers)

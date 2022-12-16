@@ -6,7 +6,7 @@ function loginPage() {
   const domString = `
   <div id="login-page">
     <img src=${background} alt="Abstract, colorful background" width="100%" height="100%" id="login-page-background">
-      <img src=${logo} alt="Hip Hop Pizza and Wangs Logo" width="300" height="300" id="hhpw-logo"/>
+    <img src=${logo} alt="Hip Hop Pizza and Wangs Logo" width="300" height="300" id="hhpw-logo"/>
     <div id="login-button-container">
   </div>
 

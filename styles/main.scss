@@ -45,6 +45,7 @@ body {
   }
 }
 
+
 // text-styling
   .cust-info {
     font-weight: 700;
@@ -68,6 +69,10 @@ body {
 
   .delete {
     color: #ff5400;
+  }
+
+  .card-link:hover {
+    color: black;
   }
 
 
@@ -101,11 +106,33 @@ body {
   transform: translate(-50%, -50%);
 }
 
+//homepage-positioning
+.homepage-content {
+  position: absolute;
+  top: 30%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.homepage-buttons {
+  padding: 8px;
+  width: 200px;
+  justify-content: center;
+}
+
+.logo-hp {
+  position: absolute;
+  top: 130%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // general
 .header {
   font-family: 'Rubik Dirt', cursive;
   padding: 20px;
   color: white;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 // button-style-related
@@ -187,4 +214,23 @@ body {
 
 .btn-margin {
   margin: 20px;
+}
+
+// form-revenue-related
+.form-text  {
+  color:white;
+  font-weight: 700;
+}
+
+.rev-text {
+  color:white;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.total {
+  font-family: 'Rubik Dirt', cursive;
+  color:#ffba08;
+  text-shadow: 2px 2px 4px #000000;
 }

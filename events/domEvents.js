@@ -58,9 +58,9 @@ const domEvents = () => {
       });
     }
     // GO TO PAYMENT
-    if (e.target.id === 'go-to-payment-btn') {
-      console.warn('Go to payment');
-      closeOrderPage();
+    if (e.target.id.includes('go-to-payment-btn')) {
+      console.warn(firebaseKey);
+      closeOrderPage(firebaseKey);
     }
   });
 };

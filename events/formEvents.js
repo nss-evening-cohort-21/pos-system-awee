@@ -84,9 +84,15 @@ const formEvents = () => {
       });
     }
     // CLOSE ORDER
-    if (e.target.id.includes('close-order')) {
-      console.warn('closed order');
-      getAllOrders().then(viewOrdersPage);
+    if (e.target.id.includes('close-order-form')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      console.warn(firebaseKey);
+      const payload = {
+        statusOpen: false,
+        firebaseKey
+      };
+      getSingleOrder(firebaseKey).then(patchOrder(payload).then(console.warn));
+      // getAllOrders().then(viewOrdersPage);
     }
   });
 };

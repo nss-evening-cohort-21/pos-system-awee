@@ -1,11 +1,11 @@
 import clearDOM from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDOM';
 
-const closeOrderPage = () => {
+const closeOrderPage = (firebaseKey) => {
   clearDOM();
   const domString = `
     <div id="closeOrderContainer">
-      <form id="close-order-form">
+      <form id="close-order-form--${firebaseKey}">
         <div class="row">
           <div class="mb-3 form-group col-sm-6 mx-auto">
             <label for="formGroupExampleInput" class="form-label">Payment Type</label>

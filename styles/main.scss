@@ -49,16 +49,14 @@ body {
 
 .logo {
   position: absolute;
+  top: 50%; 
   left: 50%;
-  margin-left: -50%;
-  top: 50%;
-  margin-top: -50%;
+  transform: translate(-50%, -50%);
  }
 
 .login-button {
   position: absolute;
+  top: 80%; 
   left: 50%;
-  margin-left: -50%;
-  top: 50%;
-  margin-top: -50%;
+  transform: translate(-50%, -50%);
 }

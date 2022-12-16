@@ -1,11 +1,10 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "~bootstrap/scss/bootstrap";
-import 
 
 
 body {
   background-color: #03071e;
-  color: #9a031e;
+  color: #ffba08;
   text-align: center;
 }
 
@@ -36,4 +35,30 @@ body {
 #login-page {
   background-color: #03071e;
   text-align: center;
+}
+
+.image-container {
+  position: relative;
+}
+
+.background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -50%;
+  top: 50%;
+  margin-top: -50%;
+ }
+
+.login-button {
+  position: absolute;
+  left: 50%;
+  margin-left: -50%;
+  top: 50%;
+  margin-top: -50%;
 }

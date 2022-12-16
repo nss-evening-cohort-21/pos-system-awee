@@ -12,7 +12,7 @@ const viewOrderDetails = (obj, array) => {
     <hr>
     <div id="itemCards-container" style="display: flex; flex-wrap: wrap;margin-bottom: 35px;"></div>
     ${obj.statusOpen ? `<button class="btn btn-primary gap-2 col-3 m-1" type="button" id="add-item-btn--${obj.firebaseKey}">Add Item</button>
-    <button class="btn btn-success gap-2 col-3 m-1" id="go-to-payment-btn" type="button">Go To Payment</button>` : ''}
+    <button class="btn btn-success gap-2 col-3 m-1" id="go-to-payment-btn--${obj.firebaseKey}" type="button">Go To Payment</button>` : ''}
     `;
     renderToDOM('#main', domString);
 

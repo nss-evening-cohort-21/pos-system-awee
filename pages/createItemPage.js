@@ -12,7 +12,7 @@ const createItemForm = (obj = {}) => {
       </div>
       <div class="mb-3" style="text-align:left">
         <label for="itemPrice" class="form-label">Item Price</label>
-        <input type="tel" class="form-control" id="itemPrice" value="${obj.price || ''}">
+        <input type="text" class="form-control" id="itemPrice" value="${obj.price || ''}" pattern="[0-9]+(\\.[0-9][0-9]?)?">
       </div>
       <button type="submit" class="btn btn-success mt-3" id="add-edit-item-btn">Add/Edit Item</button>
     </form>

@@ -9,7 +9,7 @@ const closeOrderPage = (firebaseKey) => {
         <div class="row">
           <div class="mb-3 form-group col-sm-6 mx-auto">
             <label for="formGroupExampleInput" class="form-label">Payment Type</label>
-            <select class="form-select" aria-label="Payment Type" required>
+            <select class="form-select" aria-label="Payment Type" id="paymentType" required>
               <option selected disabled value="">Select a Payment Type</option>
               <option value="cash">Cash</option>
               <option value="check">Check</option>

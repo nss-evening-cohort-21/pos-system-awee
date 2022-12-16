@@ -2,10 +2,11 @@ import {
   patchItem, postItem, getOrderDetails, getSingleItem
 } from '../api/itemData';
 import {
-  postOrder, patchOrder, getAllOrders, getSingleOrder
+  postOrder, patchOrder, getAllOrders, getSingleOrder, getOrderTotal
 } from '../api/orderData';
 import viewOrdersPage from '../pages/viewOrdersPage';
 import viewOrderDetails from '../pages/orderDetailsPage';
+import { patchRevenue, postRevenue } from '../api/revenueData';
 
 const formEvents = () => {
   document.querySelector('#formContainer').addEventListener('submit', (e) => {
@@ -91,8 +92,27 @@ const formEvents = () => {
         statusOpen: false,
         firebaseKey
       };
-      getSingleOrder(firebaseKey).then(patchOrder(payload).then(console.warn));
-      // getAllOrders().then(viewOrdersPage);
+      getSingleOrder(firebaseKey).then((order) => {
+        getOrderTotal(firebaseKey).then((orderTotal) => {
+          const revPayload = {
+            date: new Date().toLocaleDateString(),
+            orderId: order.firebaseKey,
+            orderType: order.orderType,
+            paymentType: document.querySelector('#paymentType').value,
+            tip: document.querySelector('#tipAmount').value,
+            total: orderTotal
+          };
+
+          postRevenue(revPayload).then(({ name }) => {
+            const patchPayload = { firebaseKey: name };
+
+            patchRevenue(patchPayload);
+          });
+        });
+      });
+      patchOrder(payload).then(() => {
+        getAllOrders().then(viewOrdersPage);
+      });
     }
   });
 };

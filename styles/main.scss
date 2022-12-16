@@ -3,8 +3,8 @@
 
 
 body {
-  background-color: #03071e;
-  color: #ffba08;
+  background-color: #240046;
+  color: white;
   text-align: center;
 }
 
@@ -25,6 +25,7 @@ body {
   .card {
     width: 300px;
     margin: 15px;
+    color: black;
   }
 
   .card-text {
@@ -32,6 +33,7 @@ body {
   }
 }
 
+//login-page-positioning
 #login-page {
   background-color: #03071e;
   text-align: center;
@@ -59,4 +61,51 @@ body {
   top: 80%; 
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+// button-style-related
+.btn {
+  color: white;
+  margin:0px 10px 0px 10px;
+  font-weight: bolder;
+}
+
+.btn:hover {
+  background-color: #03071e;
+  border-color: #03071e;
+  color: white;
+}
+
+.btn-purple {
+  background-color: #8338ec;
+  border-color: #8338ec;
+}
+
+.btn-green {
+  background-color: #43aa8b; 
+  border-color: #43aa8b;
+}
+
+.btn-pink {
+  background-color: #f20089;
+  border-color: #f20089;
+  color: black; 
+}
+
+.btn-orange {
+  background-color: #f9844a;
+  border-color: #f9844a;
+  color: black;
+}
+
+.btn-yellow {
+  background-color: #ffba08;
+  border-color: #ffba08;
+  color: black;
+}
+
+
+.btn-blue {
+  background-color: #4361ee;
+  border-color: #4361ee;
 }

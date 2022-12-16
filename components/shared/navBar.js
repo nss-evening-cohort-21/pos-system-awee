@@ -1,5 +1,6 @@
 import renderToDOM from '../../utils/renderToDOM';
 import logo from '../../assets/hhpw_logo.png';
+import orderDropdown from '../orderDropdown';
 
 const navBar = () => {
   const domString = `
@@ -24,6 +25,7 @@ const navBar = () => {
             <li class="nav-item">
               <a class="nav-link" href="#" id="view-revenue">Revenue</a>
             </li>
+            <li class="nav-item dropdown" id="orderDropdownContainer"></li>
           </ul>
           <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
@@ -35,6 +37,7 @@ const navBar = () => {
       </nav>`;
 
   renderToDOM('#navBar', domString);
+  orderDropdown();
 };
 
 export default navBar;

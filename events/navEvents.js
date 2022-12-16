@@ -25,6 +25,18 @@ const navEvents = (user) => {
     }
   });
   // SEARCH
+  document.querySelector('#searchBtn').addEventListener('click', (e) => {
+    const searchValue = document.querySelector('#search').value.toLowerCase();
+    console.warn(searchValue);
+    if (e) {
+      getAllOrders(user.uid).then((orders) => {
+        const filteredOrders = orders.filter((item) => item.name.toLowerCase().includes(searchValue) || item.phone.includes(searchValue));
+        viewOrdersPage(filteredOrders);
+      });
+
+      document.querySelector('#search').value = '';
+    }
+  });
 };
 
 export default navEvents;

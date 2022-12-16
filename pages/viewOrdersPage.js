@@ -20,13 +20,13 @@ const viewOrdersPage = (arr) => {
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title" id="orderCardName">${item.name}</h5>
-      <h6 class="card-subtitle mb-2 text-muted" id="orderCardStatus">${item.statusOpen ? 'OPEN' : 'CLOSED'}</h6>
-      <p class="card-text" id="orderCardPhone">${item.phone}</p>
-      <p class="card-text" id="orderCardEmail">${item.email}</p>
-      <p class="card-text" id="orderCardType">${item.orderType}</p>
-      <a href="#" class="card-link" id="orderCardDetails--${item.firebaseKey}">Details</a>
-      <a href="#" class="card-link" id="orderCardEdit--${item.firebaseKey}">Edit</a>
-      ${item.statusOpen ? `<a href="#" class="card-link" id="orderCardDelete--${item.firebaseKey}">Delete</a>` : ''}
+      <h6 class="card-subtitle mb-2" id="orderCardStatus">${item.statusOpen ? 'OPEN' : 'CLOSED'}</h6>
+      <p class="card-text cust-info" id="orderCardPhone">${item.phone}</p>
+      <p class="card-text cust-info" id="orderCardEmail">${item.email}</p>
+      <p class="card-text order-type" id="orderCardType">${item.orderType}</p>
+      <a href="#" class="card-link details" id="orderCardDetails--${item.firebaseKey}">Details</a>
+      <a href="#" class="card-link edit" id="orderCardEdit--${item.firebaseKey}">Edit</a>
+      ${item.statusOpen ? `<a href="#" class="card-link delete" id="orderCardDelete--${item.firebaseKey}">Delete</a>` : ''}
     </div>
   </div>
       `;

@@ -1,10 +1,10 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 
 body {
-  background-color: #240046;
+  background-color: #431259;
   color: black;
   text-align: center;
   font-family: 'Rubik', sans-serif;
@@ -32,6 +32,39 @@ body {
 
   .card-text {
     font-size: 18px;
+  }
+
+  .card-title {
+    font-family: 'Rubik Dirt', cursive;
+  }
+
+  .card-subtitle {
+    color: #8338ec;
+    font-weight: 400;
+  }
+
+  .cust-info {
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+  }
+
+  .order-type {
+    color:#4361ee;
+    font-weight: 500;
+    margin: 10px;
+  }
+
+  .details {
+    color: #ffba08;
+  }
+
+  .edit {
+    color: #52b788;
+  }
+
+  .delete {
+    color: #ff5400;
   }
 }
 
@@ -91,19 +124,19 @@ body {
 }
 
 .btn-green {
-  background-color: #00f5d4; 
-  border-color: #00f5d4;
+  background-color: #52b788; 
+  border-color: #52b788;
 }
 
 .btn-pink {
-  background-color: #f20089;
-  border-color: #f20089;
+  background-color: #e500a4;
+  border-color: #e500a4;
   color: black; 
 }
 
 .btn-orange {
-  background-color: #f9844a;
-  border-color: #f9844a;
+  background-color: #ff5400;
+  border-color: #ff5400;
   color: black;
 }
 

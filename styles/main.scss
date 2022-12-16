@@ -1,11 +1,14 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik:wght@400;500;600;700;800;900&display=swap');
 
 
 body {
   background-color: #240046;
-  color: white;
+  color: black;
   text-align: center;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
 }
 
 #createOrderContainer, #create-item-container {
@@ -25,7 +28,6 @@ body {
   .card {
     width: 300px;
     margin: 15px;
-    color: black;
   }
 
   .card-text {
@@ -63,11 +65,18 @@ body {
   transform: translate(-50%, -50%);
 }
 
+// general
+.header {
+  font-family: 'Rubik Dirt', cursive;
+  padding: 20px;
+  color: white;
+}
+
 // button-style-related
 .btn {
   color: white;
   margin:0px 10px 0px 10px;
-  font-weight: bolder;
+  font-weight: 700;
 }
 
 .btn:hover {
@@ -82,8 +91,8 @@ body {
 }
 
 .btn-green {
-  background-color: #43aa8b; 
-  border-color: #43aa8b;
+  background-color: #00f5d4; 
+  border-color: #00f5d4;
 }
 
 .btn-pink {
@@ -108,4 +117,9 @@ body {
 .btn-blue {
   background-color: #4361ee;
   border-color: #4361ee;
+}
+
+// searchbar
+.search {
+  font-weight: 700;
 }

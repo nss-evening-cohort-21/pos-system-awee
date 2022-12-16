@@ -7,8 +7,8 @@ const viewOrderDetails = (obj, array) => {
   clearDOM();
   getOrderTotal(obj.firebaseKey).then((orderTotal) => {
     const domString = `
-    <h2>Order Name: ${obj.name}</h2>
-    <h2>Order Total: ${currency(orderTotal)}</h2>
+    <h2 class="header">ORDER NAME:<br>${obj.name}</h2>
+    <h2 class="header">ORDER TOTAL: <br>${currency(orderTotal)}</h2>
     <hr>
     <div id="itemCards-container" style="display: flex; flex-wrap: wrap;margin-bottom: 35px;"></div>
     ${obj.statusOpen ? `<button class="btn btn-primary gap-2 col-3 m-1" type="button" id="add-item-btn--${obj.firebaseKey}">Add Item</button>

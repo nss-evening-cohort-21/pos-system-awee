@@ -10,7 +10,7 @@ const viewOrdersPage = (arr) => {
     renderToDOM('#main', domString);
   } else {
     const domString = `
-    <h1>All Orders</h1>
+    <h1 class="header">All Orders</h1>
     <div id="orderCardsDiv"></div>
   `;
     renderToDOM('#main', domString);

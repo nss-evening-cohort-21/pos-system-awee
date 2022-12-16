@@ -5,9 +5,9 @@ import renderToDOM from '../utils/renderToDOM';
 const viewRevenuePage = (obj) => {
   clearDOM();
   const domString = `
-  <h1>REVENUE</h1>
+  <h1 class="header">REVENUE</h1>
   <hr>
-  <h3>TOTAL REVENUE: ${currency(obj.combinedRevenue)}</h3>
+  <h3 class="header">TOTAL REVENUE: <br>${currency(obj.combinedRevenue)}</h3>
     <ul style="list-style-type:none;">
       <li>Total Tips: ${currency(obj.totalTips)}</li>
       <li>Total call in orders: ${obj.callInOrders}</li>

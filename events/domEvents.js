@@ -37,7 +37,6 @@ const domEvents = () => {
     }
     // DELETE ORDER
     if (e.target.id.includes('orderCardDelete')) {
-      console.warn('DELETE', firebaseKey);
       // eslint-disable-next-line no-alert
       if (window.confirm('Want to delete?')) {
         deleteOrderItemsRelationship(firebaseKey).then(() => {

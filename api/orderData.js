@@ -82,11 +82,7 @@ const getOrderTotal = (firebaseKey) => new Promise((resolve, reject) => {
     .then((data) => {
       if (data) {
         const dataArr = Object.values(data);
-        const orderTotal = dataArr.map((item) => Number(item.price)).reduce((a, b) => a + b, 0)
-          .toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD'
-          });
+        const orderTotal = dataArr.map((item) => Number(item.price)).reduce((a, b) => a + b, 0);
         resolve(orderTotal);
       } else {
         resolve([]);

@@ -44,3 +44,40 @@ Things to remember while coding out the project
 * [Stretch Goals 1 - Filtering the Data](./instructions/stretch-1.md)
 * [Stretch Goals 2 - Dealing with Change](./instructions/stretch-2.md)
 * [Stretch Goals 3 - Play that Funky Music](./instructions/stretch-3.md)
+
+# Hip Hop, Pizza, and Wangs [![Netlify Status](https://api.netlify.com/api/v1/badges/4ab7e730-7ed3-4cfd-a988-66195e79a991/deploy-status)](https://app.netlify.com/sites/drt-sortinghat/deploys)
+<!-- update the netlify badge above with your own badge that you can find at netlify under settings/general#status-badges -->
+
+In this project, we created a website for a resturant POS. 
+
+[View App](#your-link)
+
+## Get Started <!-- OPTIONAL, but doesn't hurt -->
+git clone ..... // continue editing
+
+## About the User <!-- This is a scaled down user persona -->
+- The ideal user for this application is a restuarant
+- The business is slowly growing and they are ready to take on more orders with a computerized system. It will help keep them organized and efficient.
+- The problem this app solves for them is it allows them to organize their different orders, edit the orders and the items in them. It also calculates the revenue for the restaurant.
+
+## Features <!-- List your app features using bullets! Do NOT use a paragraph. No one will read that! -->
+- When a new order is created, it will be added to the database and printed to the DOM with the current orders.
+- Orders can be edited and items added to the orders. Items will be added to the database and printed in the order details. 
+- Item amounts are added to the total revenue of each order. Total revenue of all order items is shown on separate page.
+
+## Video Walkthrough of APP NAME <!-- A loom link is sufficient -->
+https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
+
+## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
+- [Check out the deployed site](#your-link)
+- [Wireframes](https://www.figma.com/file/0WBbI9X6nxhNNrz6Sb3YxQ/Team-AWEE?node-id=0%3A1&t=Ir1OJ4QSX9n97gvK-0)
+- [Project Board](#your-link)
+
+## Code Snippet <!-- OPTIONAL, but doesn't hurt -->
+PLACE CODE SNIPPET HERE
+
+## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
+<img width="1148" alt="Your Alt" src="your-link.png">
+
+## Contributors
+- [YOUR NAME](https://github.com/your-github-url)

@@ -25,15 +25,10 @@ const navBar = () => {
               <a class="nav-link" href="#" id="view-revenue">Revenue</a>
             </li>
           </ul>
-          <span>
-            <input
-              class="form-control mr-sm-2"
-              id="search"
-              placeholder="Search Orders"
-              aria-label="Search"
-            />
-          </span>
-          
+          <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
+          <button class="btn btn-success" type="submit" id="searchBtn">Search</button>
+        </form>
           <div id="logout-button"></div>
         </div>
         </div>

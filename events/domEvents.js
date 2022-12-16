@@ -54,10 +54,12 @@ const domEvents = () => {
       console.warn('DELETE-ITEM', firebaseKey);
       // eslint-disable-next-line no-alert
       if (window.confirm('Delete this item?')) {
-        getOrderDetails(firebaseKey.orderID).then((arr) => {
-          deleteItem(firebaseKey).then(() => {
-            getSingleOrder(firebaseKey.orderID).then((obj) => {
-              viewOrderDetails(obj, arr);
+        getSingleItem(firebaseKey).then((item) => {
+          getSingleOrder(item.orderID).then((order) => {
+            deleteItem(firebaseKey).then(() => {
+              getOrderDetails(order.firebaseKey).then((arr) => {
+                viewOrderDetails(order, arr);
+              });
             });
           });
         });

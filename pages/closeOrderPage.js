@@ -7,7 +7,7 @@ const closeOrderPage = (firebaseKey) => {
     <div id="closeOrderContainer">
       <form id="close-order-form--${firebaseKey}">
         <div class="row">
-          <div class="mb-3 form-group col-sm-6 mx-auto">
+          <div class="mb-3 form-group col-sm-6 mx-auto form-text">
             <label for="formGroupExampleInput" class="form-label">Payment Type</label>
             <select class="form-select" aria-label="Payment Type" id="paymentType" required>
               <option selected disabled value="">Select a Payment Type</option>
@@ -20,12 +20,12 @@ const closeOrderPage = (firebaseKey) => {
           </div>
         </div>
         <div class="row">
-          <div class="mb-3 form-group col-sm-6 mx-auto">
+          <div class="mb-3 form-group col-sm-6 mx-auto form-text">
             <label for="tip amount" class="form-label">Tip Amount</label>
               <input type="text" class="form-control" id="tipAmount" name="tipAmount" placeholder="0.00" pattern="[0-9]+(\\.[0-9][0-9]?)?" required>
           </div>
         </div>
-        <button type="submit" class="btn btn-success">Close Order</button>
+        <button type="submit" class="btn btn-blue">Close Order</button>
       </form>
     </div>
     `;

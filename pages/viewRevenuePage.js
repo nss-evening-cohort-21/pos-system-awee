@@ -11,6 +11,7 @@ const viewRevenuePage = (obj) => {
   <hr>
   <div id="dateRangeContainer">
   <p class="rev-text">Date Range:</p>
+  <input type="date" id="beginDate"><input type="date" id="endDate"><button  class="btn btn-yellow btn-sm" id="dateBtn">Click</button>
   </div>
   <hr>
     <ul class="rev-text" style="list-style-type:none;">
@@ -27,6 +28,12 @@ const viewRevenuePage = (obj) => {
     `;
 
   renderToDOM('#main', domString);
+
+  document.querySelector('#dateBtn').addEventListener('click', () => {
+    const beginDate = document.querySelector('#beginDate').value;
+    const endDate = document.querySelector('#endDate').value;
+    console.warn(beginDate, endDate);
+  });
 };
 
 export default viewRevenuePage;

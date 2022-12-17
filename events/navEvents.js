@@ -41,16 +41,14 @@ const navEvents = (user) => {
     }
   });
   // SEARCH
-  document.querySelector('#searchBtn').addEventListener('click', (e) => {
+  document.querySelector('#searchBtn').addEventListener('click', () => {
     const searchValue = document.querySelector('#search').value.toLowerCase();
-    if (e) {
-      getAllOrders(user.uid).then((orders) => {
-        const filteredOrders = orders.filter((item) => item.name.toLowerCase().includes(searchValue) || item.phone.includes(searchValue));
-        viewOrdersPage(filteredOrders);
-      });
+    getAllOrders(user.uid).then((orders) => {
+      const filteredOrders = orders.filter((item) => item.name.toLowerCase().includes(searchValue) || item.phone.includes(searchValue));
+      viewOrdersPage(filteredOrders);
+    });
 
-      document.querySelector('#search').value = '';
-    }
+    document.querySelector('#search').value = '';
   });
 };
 

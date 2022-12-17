@@ -50,7 +50,6 @@ const domEvents = () => {
     }
     // DELETE ITEM
     if (e.target.id.includes('delete-item-btn')) {
-      console.warn('DELETE-ITEM', firebaseKey);
       // eslint-disable-next-line no-alert
       if (window.confirm('Delete this item?')) {
         getSingleItem(firebaseKey).then((item) => {
@@ -72,7 +71,6 @@ const domEvents = () => {
     }
     // GO TO PAYMENT
     if (e.target.id.includes('go-to-payment-btn')) {
-      console.warn(firebaseKey);
       closeOrderPage(firebaseKey);
     }
   });

@@ -9,6 +9,10 @@ const viewRevenuePage = (obj) => {
   <hr>
   <h3 class="total">TOTAL REVENUE: <br>${currency(obj.combinedRevenue)}</h3>
   <hr>
+  <div id="dateRangeContainer">
+  <p class="rev-text">Date Range:</p>
+  </div>
+  <hr>
     <ul class="rev-text" style="list-style-type:none;">
       <li>Total Tips: ${currency(obj.totalTips)}</li>
       <li>Total call in orders: ${obj.callInOrders}</li>

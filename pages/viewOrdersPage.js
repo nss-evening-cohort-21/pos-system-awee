@@ -5,7 +5,7 @@ const viewOrdersPage = (arr) => {
   clearDOM();
   if (arr.length === 0) {
     const domString = `
-    <h1 class="header">No Orders!</h1>
+    <h1>No Orders!</h1>
   `;
     renderToDOM('#main', domString);
   } else {

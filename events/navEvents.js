@@ -41,7 +41,8 @@ const navEvents = (user) => {
     }
   });
   // SEARCH
-  document.querySelector('#searchBtn').addEventListener('click', () => {
+  document.querySelector('#searchBtn').addEventListener('click', (e) => {
+    e.preventDefault();
     const searchValue = document.querySelector('#search').value.toLowerCase();
     getAllOrders(user.uid).then((orders) => {
       const filteredOrders = orders.filter((item) => item.name.toLowerCase().includes(searchValue) || item.phone.includes(searchValue));

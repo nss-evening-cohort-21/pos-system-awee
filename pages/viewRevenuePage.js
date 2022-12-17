@@ -7,11 +7,16 @@ const viewRevenuePage = (obj) => {
   const domString = `
   <h1 class="header">REVENUE</h1>
   <hr>
-  <h3 class="total">TOTAL REVENUE: <br>${currency(obj.combinedRevenue)}</h3>
+  <div id="revTotalDiv">
+    <h3 class="total">TOTAL REVENUE: <br>${currency(obj.combinedRevenue)}</h3>
+    <canvas id="myChart"></canvas>
+  </div>
   <hr>
   <div id="dateRangeContainer">
   <p class="rev-text">Date Range:</p>
-  <input type="date" id="beginDate"><input type="date" id="endDate"><button  class="btn btn-yellow btn-sm" id="dateBtn">Click</button>
+  <input type="date" id="beginDate">
+  <input type="date" id="endDate">
+  <button class="btn btn-yellow btn-sm" id="dateBtn">Click</button>
   </div>
   <hr>
     <ul class="rev-text" style="list-style-type:none;">
@@ -30,9 +35,11 @@ const viewRevenuePage = (obj) => {
   renderToDOM('#main', domString);
 
   document.querySelector('#dateBtn').addEventListener('click', () => {
+    // min and max date attributes
     const beginDate = document.querySelector('#beginDate').value;
-    const endDate = document.querySelector('#endDate').value;
-    console.warn(beginDate, endDate);
+    const beginDateEdit = Date(beginDate).toLocaleDateString();
+    // const endDate = document.querySelector('#endDate').value;
+    console.warn(beginDate, beginDateEdit);
   });
 };
 

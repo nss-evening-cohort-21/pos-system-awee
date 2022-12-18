@@ -14,6 +14,7 @@ const viewRevenuePage = (obj) => {
   <hr>
   <div id="dateRangeContainer">
   <p class="rev-text">Date Range:</p>
+  <p class="rev-text">${obj.earliestDate} - ${obj.latestDate}</p>
   <input type="date" id="beginDate">
   <input type="date" id="endDate">
   <button class="btn btn-yellow btn-sm" id="dateBtn">Click</button>
@@ -33,14 +34,6 @@ const viewRevenuePage = (obj) => {
     `;
 
   renderToDOM('#main', domString);
-
-  document.querySelector('#dateBtn').addEventListener('click', () => {
-    // min and max date attributes
-    const beginDate = document.querySelector('#beginDate').value;
-    const beginDateEdit = Date(beginDate).toLocaleDateString();
-    // const endDate = document.querySelector('#endDate').value;
-    console.warn(beginDate, beginDateEdit);
-  });
 };
 
 export default viewRevenuePage;

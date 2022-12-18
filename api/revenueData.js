@@ -1,4 +1,5 @@
 import client from '../utils/client';
+import createRevObj from '../utils/createRevObj';
 
 const endpoint = client.databaseURL;
 
@@ -39,21 +40,28 @@ const getRevenueDetails = () => new Promise((resolve, reject) => {
     .then((data) => {
       if (data) {
         const dataArr = Object.values(data);
-        const totalRevenue = dataArr.map((item) => Number(item.total)).reduce((a, b) => a + b, 0);
-        const totalTips = dataArr.map((item) => Number(item.tip)).reduce((a, b) => a + b, 0);
-        const combinedRevenue = totalRevenue + totalTips;
-        const revObj = {
-          combinedRevenue,
-          totalRevenue,
-          totalTips,
-          callInOrders: dataArr.filter((item) => item.orderType === 'phone').length,
-          walkInOrders: dataArr.filter((item) => item.orderType === 'in-person').length,
-          cashOrders: dataArr.filter((item) => item.paymentType === 'cash').length,
-          checkOrders: dataArr.filter((item) => item.paymentType === 'check').length,
-          debitOrders: dataArr.filter((item) => item.paymentType === 'debit').length,
-          creditOrders: dataArr.filter((item) => item.paymentType === 'credit').length,
-          mobileOrders: dataArr.filter((item) => item.paymentType === 'mobile').length
-        };
+        const revObj = createRevObj(dataArr, '', '');
+        resolve(revObj);
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
+const getRevenueDates = (beginDate, endDate) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/revenue.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        const dataArr = Object.values(data);
+        const filteredDates = dataArr.filter((item) => Date.parse(item.date) >= beginDate && Date.parse(item.date) <= endDate);
+        const revObj = createRevObj(filteredDates, beginDate, endDate);
         resolve(revObj);
       } else {
         resolve([]);
@@ -63,5 +71,5 @@ const getRevenueDetails = () => new Promise((resolve, reject) => {
 });
 
 export {
-  patchRevenue, postRevenue, getRevenueDetails
+  patchRevenue, postRevenue, getRevenueDetails, getRevenueDates
 };

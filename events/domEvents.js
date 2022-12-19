@@ -79,7 +79,7 @@ const domEvents = () => {
     if (e.target.id === 'dateBtn') {
       const beginDate = Date.parse(document.querySelector('#beginDate').value);
       const endDate = Date.parse(document.querySelector('#endDate').value) + 86400000;
-      if (new Date() < endDate) {
+      if (new Date() < endDate - 86400000) {
         window.alert('DATE RANGE MUST NOT EXCEED CURRENT DATE');
         // eslint-disable-next-line no-restricted-globals
       } else if (isNaN(beginDate) || isNaN(endDate)) {

@@ -8,7 +8,7 @@ const createRevObj = (arr, beginDate, endDate) => {
   if (beginDate === '') {
     earliestDate = dateArr[0].date;
   } else {
-    earliestDate = new Date(beginDate).toLocaleDateString();
+    earliestDate = new Date(beginDate + 86400000).toLocaleDateString();
   }
   if (endDate === '') {
     latestDate = dateArr[dateArr.length - 1].date;

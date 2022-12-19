@@ -84,6 +84,8 @@ const domEvents = () => {
         // eslint-disable-next-line no-restricted-globals
       } else if (isNaN(beginDate) || isNaN(endDate)) {
         window.alert('USER MUST ENTER DATE RANGE');
+      } else if (beginDate >= endDate) {
+        window.alert('USER MUST ENTER PROPER DATE RANGE');
       } else {
         getRevenueDates(beginDate, endDate).then(viewRevenuePage);
       }

@@ -90,6 +90,11 @@ const domEvents = () => {
         getRevenueDates(beginDate, endDate).then(viewRevenuePage);
       }
     }
+
+    // RESET DATE RANGE
+    if (e.target.id === 'resetDateBtn') {
+      getRevenueDetails().then(viewRevenuePage);
+    }
   });
 };
 

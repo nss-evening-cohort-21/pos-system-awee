@@ -19,6 +19,7 @@ const viewRevenuePage = (obj) => {
   <input type="date" id="beginDate">
   <input type="date" id="endDate">
   <button class="btn btn-yellow btn-sm" id="dateBtn">View</button>
+  <button class="btn btn-orange btn-sm" id="resetDateBtn">Reset</button>
   </div>
   <hr>
     <ul class="rev-text" style="list-style-type:none;">

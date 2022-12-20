@@ -57,10 +57,10 @@ const viewRevenuePage = (obj) => {
     options: {
       scales: {
         y: {
-          ticks: { color: 'white', beginAtZero: true }
+          ticks: { color: 'black', beginAtZero: true }
         },
         x: {
-          ticks: { color: 'white' }
+          ticks: { color: 'black' }
         }
       }
     }

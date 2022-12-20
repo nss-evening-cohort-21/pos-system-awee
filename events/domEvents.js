@@ -1,4 +1,5 @@
-import { getRevenueDetails } from '../api/revenueData';
+/* eslint-disable no-alert */
+import { getRevenueDates, getRevenueDetails } from '../api/revenueData';
 import viewRevenuePage from '../pages/viewRevenuePage';
 import createOrderForm from '../pages/createOrderPage';
 import { deleteOrderItemsRelationship, getAllOrders, getSingleOrder } from '../api/orderData';
@@ -72,6 +73,22 @@ const domEvents = () => {
     // GO TO PAYMENT
     if (e.target.id.includes('go-to-payment-btn')) {
       closeOrderPage(firebaseKey);
+    }
+
+    // FILTER REVENUE BY DATES
+    if (e.target.id === 'dateBtn') {
+      const beginDate = Date.parse(document.querySelector('#beginDate').value);
+      const endDate = Date.parse(document.querySelector('#endDate').value) + 86400000;
+      if (new Date() < endDate - 86400000) {
+        window.alert('DATE RANGE MUST NOT EXCEED CURRENT DATE');
+        // eslint-disable-next-line no-restricted-globals
+      } else if (isNaN(beginDate) || isNaN(endDate)) {
+        window.alert('USER MUST ENTER DATE RANGE');
+      } else if (beginDate >= endDate) {
+        window.alert('USER MUST ENTER PROPER DATE RANGE');
+      } else {
+        getRevenueDates(beginDate, endDate).then(viewRevenuePage);
+      }
     }
   });
 };

@@ -11,7 +11,6 @@ const viewRevenuePage = (obj) => {
   <hr>
   <div id="revTotalDiv">
     <h3 class="total">TOTAL REVENUE: <br>${currency(obj.combinedRevenue)}</h3>
-    <canvas id="myChart"></canvas>
   </div>
   <hr>
   <div id="dateRangeContainer">
@@ -33,6 +32,11 @@ const viewRevenuePage = (obj) => {
       <li>Check - ${obj.checkOrders}</li>
       <li>Mobile - ${obj.mobileOrders}</li>
     </ul>
+  <hr>
+  <div>
+    <h3 class="total">Revenue by Date</h3>
+    <canvas id="myChart"></canvas>
+  </div>
     `;
 
   renderToDOM('#main', domString);
@@ -43,15 +47,20 @@ const viewRevenuePage = (obj) => {
     data: {
       labels: revenueArray.map((row) => row.date),
       datasets: [{
-        label: 'Combined Revenue in $',
+        label: 'Per Order Revenue in $',
         data: revenueArray.map((row) => row.total),
-        borderWidth: 1
+        borderWidth: 1,
+        borderColor: '#ffba08',
+        backgroundColor: '#ffba08'
       }]
     },
     options: {
       scales: {
         y: {
-          beginAtZero: true
+          ticks: { color: 'white', beginAtZero: true }
+        },
+        x: {
+          ticks: { color: 'white' }
         }
       }
     }

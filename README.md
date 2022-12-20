@@ -49,8 +49,13 @@ https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
               viewOrderDetails(obj, arr);
 ```
 
-## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
-<img width="1148" alt="Your Alt" src="your-link.png">
+## Project Screenshots
+<img width="1148" alt="login-page" src="login_page.png">
+<img width="1148" alt="home-page" src="home_page.png">
+<img width="1148" alt="orders-page" src="orders_page.png">
+<img width="1148" alt="order-details-page" src="order_details.png">
+<img width="1148" alt="open-orders" src="open_orders.png">
+<img width="1148" alt="revenue-chart" src="chart.png">
 
 ## Contributors
 - [Allison Blumenthal](https://github.com/allison-blumenthal)

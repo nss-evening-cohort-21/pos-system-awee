@@ -11,6 +11,7 @@ const viewRevenuePage = (obj) => {
   <hr>
   <div id="revTotalDiv">
     <h3 class="total">TOTAL REVENUE: <br>${currency(obj.combinedRevenue)}</h3>
+    <canvas id="myChart"></canvas>
   </div>
   <hr>
   <div id="dateRangeContainer">

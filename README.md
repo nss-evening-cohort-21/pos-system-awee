@@ -5,8 +5,12 @@ In this project, we created a website for a resturant POS.
 
 [View App](https://hhpw-awee.netlify.app/)
 
-## Get Started <!-- OPTIONAL, but doesn't hurt -->
-git clone .....
+## Get Started
+```
+$ git clone git@github.com:nss-evening-cohort-21/pos-system-awee.git
+
+$ cd pos-sytem-awee
+```
 
 ## About the User 
 - The ideal user for this application is a restuarant
@@ -23,10 +27,11 @@ https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
 - [Check out the deployed site](https://hhpw-awee.netlify.app/)
-- [Wireframes](https://www.figma.com/file/0WBbI9X6nxhNNrz6Sb3YxQ/Team-AWEE?node-id=0%3A1&t=Ir1OJ4QSX9n97gvK-0)
+- [Wireframe/Flowchart](https://www.figma.com/file/0WBbI9X6nxhNNrz6Sb3YxQ/Team-AWEE?node-id=0%3A1&t=Ir1OJ4QSX9n97gvK-0)
+- [ERD] (https://dbdiagram.io/d/638fe1c8bae3ed7c45453109)
 
 ## Code Snippet 
-// ADD ITEM
+```
     if (e.target.id.includes('submit-item')) {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
@@ -42,11 +47,7 @@ https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
           getOrderDetails(firebaseKey).then((arr) => {
             getSingleOrder(firebaseKey).then((obj) => {
               viewOrderDetails(obj, arr);
-            });
-          });
-        });
-      });
-    }
+```
 
 ## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
 <img width="1148" alt="Your Alt" src="your-link.png">

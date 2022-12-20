@@ -70,6 +70,24 @@ const getRevenueDates = (beginDate, endDate) => new Promise((resolve, reject) =>
     .catch(reject);
 });
 
+const getAllRevenueData = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/revenue.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        const dataArr = Object.values(data);
+        resolve(dataArr);
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
 export {
-  patchRevenue, postRevenue, getRevenueDetails, getRevenueDates
+  patchRevenue, postRevenue, getRevenueDetails, getRevenueDates, getAllRevenueData
 };

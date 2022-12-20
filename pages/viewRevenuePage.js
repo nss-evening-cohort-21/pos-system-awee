@@ -1,6 +1,8 @@
+import Chart from 'chart.js/auto';
 import clearDOM from '../utils/clearDom';
 import currency from '../utils/currency';
 import renderToDOM from '../utils/renderToDOM';
+import { getAllRevenueData } from '../api/revenueData';
 
 const viewRevenuePage = (obj) => {
   clearDOM();
@@ -34,6 +36,27 @@ const viewRevenuePage = (obj) => {
     `;
 
   renderToDOM('#main', domString);
+  const ctx = document.getElementById('myChart');
+
+  const revenueChart = (revenueArray) => new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: revenueArray.map((row) => row.date),
+      datasets: [{
+        label: 'Combined Revenue in $',
+        data: revenueArray.map((row) => row.total),
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+  getAllRevenueData().then(revenueChart);
 };
 
 export default viewRevenuePage;

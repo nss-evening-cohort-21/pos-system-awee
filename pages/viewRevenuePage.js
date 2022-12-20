@@ -9,7 +9,6 @@ const viewRevenuePage = (obj) => {
   <hr>
   <div id="revTotalDiv">
     <h3 class="total">TOTAL REVENUE: <br>${currency(obj.combinedRevenue)}</h3>
-    <canvas id="myChart"></canvas>
   </div>
   <hr>
   <div id="dateRangeContainer">
@@ -17,7 +16,7 @@ const viewRevenuePage = (obj) => {
   <p class="rev-text">${obj.earliestDate} - ${obj.latestDate}</p>
   <input type="date" id="beginDate">
   <input type="date" id="endDate">
-  <button class="btn btn-yellow btn-sm" id="dateBtn">Click</button>
+  <button class="btn btn-yellow btn-sm" id="dateBtn">View</button>
   </div>
   <hr>
     <ul class="rev-text" style="list-style-type:none;">

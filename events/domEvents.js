@@ -80,12 +80,12 @@ const domEvents = () => {
       const beginDate = Date.parse(document.querySelector('#beginDate').value);
       const endDate = Date.parse(document.querySelector('#endDate').value) + 86400000;
       if (new Date() < endDate - 86400000) {
-        window.alert('DATE RANGE MUST NOT EXCEED CURRENT DATE');
+        window.alert('Date range must not exceed current date.');
         // eslint-disable-next-line no-restricted-globals
       } else if (isNaN(beginDate) || isNaN(endDate)) {
-        window.alert('USER MUST ENTER DATE RANGE');
+        window.alert('User must enter date range.');
       } else if (beginDate >= endDate) {
-        window.alert('USER MUST ENTER PROPER DATE RANGE');
+        window.alert('User must enter proper date range.');
       } else {
         getRevenueDates(beginDate, endDate).then(viewRevenuePage);
       }

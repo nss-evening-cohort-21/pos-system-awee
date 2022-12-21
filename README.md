@@ -22,8 +22,8 @@ $ cd pos-sytem-awee
 - Orders can be edited and items added to the orders. Items will be added to the database and printed in the order details. 
 - Item amounts are added to the total revenue of each order. Total revenue of all order items is shown on separate page.
 
-## Video Walkthrough of APP NAME <!-- A loom link is sufficient -->
-https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
+## Video Walkthrough of APP NAME
+https://www.loom.com/share/a5c21fbbba6347619034935b461fa7ca
 
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
 - [Check out the deployed site](https://hhpw-awee.netlify.app/)

@@ -1,0 +1,47 @@
+{
+  "-NIoXatb7sDKPTyVlndn": {
+    "firebaseKey": "",
+    "date": "3/29/2022",
+    "paymentType": "credit",
+    "tip": "$7.67",
+    "orderType": "in-person",
+    "orderId": "",
+    "total": "$7.20"
+  },
+  "-NIoXatep_d5ywSQWbJo": {
+    "firebaseKey": "",
+    "date": "7/8/2022",
+    "paymentType": "cash",
+    "tip": "$2.35",
+    "orderType": "phone",
+    "orderId": "",
+    "total": "$0.74"
+  },
+  "-NIoXathoBunP4whfq_B": {
+    "firebaseKey": "",
+    "date": "3/9/2022",
+    "paymentType": "credit",
+    "tip": "$7.10",
+    "orderType": "in-person",
+    "orderId": "",
+    "total": "$6.39"
+  },
+  "-NIoXatkDyNUnGAtvYsL": {
+    "firebaseKey": "",
+    "date": "3/3/2022",
+    "paymentType": "cash",
+    "tip": "$0.95",
+    "orderType": "in-person",
+    "orderId": "",
+    "total": "$5.75"
+  },
+  "-NIoXatn7dLnJMnUQdMx": {
+    "firebaseKey": "",
+    "date": "1/14/2022",
+    "paymentType": "debit",
+    "tip": "$9.57",
+    "orderType": "in-person",
+    "orderId": "",
+    "total": "$3.22"
+  }
+}

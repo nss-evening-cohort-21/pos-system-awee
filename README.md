@@ -28,7 +28,7 @@ https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
 ## Relevant Links <!-- Link to all the things that are required outside of the ones that have their own section -->
 - [Check out the deployed site](https://hhpw-awee.netlify.app/)
 - [Wireframe/Flowchart](https://www.figma.com/file/0WBbI9X6nxhNNrz6Sb3YxQ/Team-AWEE?node-id=0%3A1&t=Ir1OJ4QSX9n97gvK-0)
-- [ERD] (https://dbdiagram.io/d/638fe1c8bae3ed7c45453109)
+- [ERD](https://dbdiagram.io/d/638fe1c8bae3ed7c45453109)
 
 ## Code Snippet 
 ```
@@ -50,12 +50,12 @@ https://www.loom.com/share/829b90d831ea441ba2db6bea724af210
 ```
 
 ## Project Screenshots
-<img width="1148" alt="login-page" src="login_page.png">
-<img width="1148" alt="home-page" src="home_page.png">
-<img width="1148" alt="orders-page" src="orders_page.png">
-<img width="1148" alt="order-details-page" src="order_details.png">
-<img width="1148" alt="open-orders" src="open_orders.png">
-<img width="1148" alt="revenue-chart" src="chart.png">
+<img width="1148" alt="login-page" src="assets/login_page.png">
+<img width="1148" alt="home-page" src="assets/home_page.png">
+<img width="1148" alt="orders-page" src="assets/orders_page.png">
+<img width="1148" alt="order-details-page" src="assets/order_details.png">
+<img width="1148" alt="open-orders" src="assets/open_orders.png">
+<img width="1148" alt="revenue-chart" src="assets/chart.png">
 
 ## Contributors
 - [Allison Blumenthal](https://github.com/allison-blumenthal)
